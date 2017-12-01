@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './Fretboard.css';
 
-class App extends Component {
+class Fretboard extends Component {
     render() {
         return (
             <div className="Fretboard">
@@ -10,3 +10,5 @@ class App extends Component {
         );
     }
 }
+
+export default Fretboard;
