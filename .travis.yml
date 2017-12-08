@@ -5,6 +5,9 @@ node_js:
   - 9.0
   - 8.0
 
+before_script:
+  - npm install
+
 script:
   - npm run lint
   - npm run build
