@@ -1,0 +1,34 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+},
+  "plugins": [
+    "react",
+    "jest"
+  ],
+  "rules"  : {
+    "no-unused-vars": ["off"],
+    "no-console": [
+      "error",
+      { "allow": ["warn","error","info"] }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "align": "colon"
+      }
+    ]
+  }
+}

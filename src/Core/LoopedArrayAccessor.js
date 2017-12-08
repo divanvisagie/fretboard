@@ -1,17 +1,16 @@
 'use strict'
 
-function LoopedAccessor(array) {
+function LoopedAccessor (array) {
   return {
-    getAtIndex(index) {
-
+    getAtIndex (index) {
       if (index < 0) {
         const indexToUse = array.length + index
         return array[indexToUse]
       }
 
       if (index >= array.length) {
-          let remainder = index % array.length
-          return array[remainder]
+        let remainder = index % array.length
+        return array[remainder]
       }
 
       return array[index]
@@ -19,4 +18,4 @@ function LoopedAccessor(array) {
   }
 }
 
-export default LoopedAccessor;
+export default LoopedAccessor

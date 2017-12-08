@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import './Fretboard.css';
+import React, {Component} from 'react'
+import './Fretboard.css'
 
 class Fretboard extends Component {
-    render() {
-        return (
-            <div className="Fretboard">
-            </div>
-        );
-    }
+  render () {
+    return (
+      <div className="Fretboard">
+      </div>
+    )
+  }
 }
 
-export default Fretboard;
+export default Fretboard
