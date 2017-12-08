@@ -10,6 +10,10 @@ describe('when creating a new note object', () => {
       const name = note.toString()
       expect(name).toBe('C')
     })
+    it('should return 3 when calling getIndex', () => {
+      const index = note.getIndex()
+      expect(index).toBe(3)
+    })
     it('should return C# when calling next()', () => {
       const name = note.next().toString()
       expect(name).toBe('C#')
