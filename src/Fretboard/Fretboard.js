@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './Fretboard.css';
 
 class Fretboard extends Component {
