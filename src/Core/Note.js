@@ -32,6 +32,10 @@ function Note (name) {
 
   let sharp = false
 
+  function getNoteIndex () {
+
+  }
+
   return {
     sharpen () {
       sharp = true
@@ -47,19 +51,17 @@ function Note (name) {
       return name
     },
     toFlatString () {
-      const fullName = this.toString()
-      const noteOrderAccessor = LoopedAccessor(noteOrder)
-
-      const currentIndex = noteOrder.indexOf(fullName)
-      const nextIndex = currentIndex + 1
-      const flatNoteName = noteOrderAccessor.getAtIndex(nextIndex)
+      const flatNoteName = this.next()
       return `${flatNoteName}${FLAT_CHARACTER}`
     },
-    next (halfSteps = 1) {
+    getIndex () {
       const fullName = this.toString()
+      return noteOrder.indexOf(fullName)
+    },
+    next (halfSteps = 1) {
       const noteOrderAccessor = LoopedAccessor(noteOrder)
 
-      const currentIndex = noteOrder.indexOf(fullName)
+      const currentIndex = this.getIndex()
       const nextIndex = currentIndex + halfSteps
 
       const nextNoteName = noteOrderAccessor.getAtIndex(nextIndex)
