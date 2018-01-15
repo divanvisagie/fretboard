@@ -2,18 +2,7 @@
 
 import _ from 'underscore'
 import Note from './Note'
-
-function GuitarString (root, length) {
-  const rootNote = Note(root)
-  return {
-    root () {
-      return root
-    },
-    noteAtFret (index) {
-      return rootNote.next(index - 1)
-    }
-  }
-}
+import GuitarString from './GuitarString'
 
 describe('when creating a new guitar string object', () => {
   describe('when creating a string with the root note e', () => {
