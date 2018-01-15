@@ -1,0 +1,22 @@
+.GuitarString {
+    margin: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.GuitarString .note {
+    font-size: 12pt;
+    background: white;
+    width: 26px;   
+    height: 26px;
+    border-radius: 50%;
+    padding: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
