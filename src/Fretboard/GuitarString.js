@@ -30,10 +30,10 @@ class GuitarString extends Component {
         Frets: {this.props.frets}
         {this.test}
 
-        {this.notes.map(noteName => 
-            <div>
-                {noteName}
-            </div>
+        {this.notes.map((noteName) =>
+          <div>
+            {noteName}
+          </div>
         )}
       </div>
     )
