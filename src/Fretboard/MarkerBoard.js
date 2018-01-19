@@ -15,7 +15,11 @@ class MarkerBoard extends Component {
 
   drawDot (value) {
     if (this.dots.includes(value)) {
-      return <div>.</div>
+      if (value % 12 === 0) {
+        return <div className="dot">• •</div>
+      } else {
+        return <div className="dot">•</div>
+      }
     } else {
       return <div></div>
     }
@@ -24,7 +28,7 @@ class MarkerBoard extends Component {
   render () {
     return (
       <div className="MarkerBoard">
-        <div className="nut">Nut</div>
+        <div className="nut"></div>
 
         {this.range.map((x, i) =>
           <div className="fret" key={i}>
