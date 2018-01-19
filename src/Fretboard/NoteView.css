@@ -9,11 +9,11 @@
 .NoteView .string {
     background: grey;
     height: 2px;
-    width: 100%;
+    width: calc(100% + 3px);
     position: relative;
     top: calc(50% - 1px);
     float: left;
-    z-index: 1;
+    z-index: 2;
 }
 
 .NoteView .note {
@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 3;
     margin: auto;
     box-shadow: #444 1px 1px 3px;
 }
