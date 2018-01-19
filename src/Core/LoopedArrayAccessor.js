@@ -1,5 +1,3 @@
-'use strict'
-
 function LoopedAccessor (array) {
   return {
     getAtIndex (index) {

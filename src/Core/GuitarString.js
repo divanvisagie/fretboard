@@ -1,5 +1,3 @@
-
-import _ from 'underscore'
 import Note from './Note'
 
 function GuitarString (root, length) {

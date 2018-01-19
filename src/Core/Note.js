@@ -1,5 +1,3 @@
-'use strict'
-
 import LoopedAccessor from './LoopedArrayAccessor'
 
 const noteOrder = [
@@ -31,10 +29,6 @@ function Note (name) {
   const FLAT_CHARACTER = '♭'
 
   let sharp = false
-
-  function getNoteIndex () {
-
-  }
 
   return {
     sharpen () {
