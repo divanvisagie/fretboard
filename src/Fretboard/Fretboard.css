@@ -1,3 +1,4 @@
 .Fretboard {
-    background: rgb(202, 181, 86)
+    background: rgb(202, 181, 86);
+    max-width: calc(100% - 40px);
 }

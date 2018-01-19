@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Fretboard</h1>
         </header>
 
-        <div>
+        <div className="App-fretboard-container">
           <Fretboard/>
         </div>
       </div>
