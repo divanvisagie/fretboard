@@ -29,8 +29,8 @@ class GuitarString extends Component {
     return (
       <div className="GuitarString">
         <NutView note={this.rootNote} />
-        {this.notes.map((note) =>
-          <NoteView note={note} />
+        {this.notes.map((note, index) =>
+          <NoteView note={note} key={index}/>
         )}
       </div>
     )
