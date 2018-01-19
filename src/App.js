@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Fretboard</h1>
         </header>
-      
+
         <p>
           <Fretboard/>
         </p>
