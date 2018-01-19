@@ -1,9 +1,23 @@
 .NoteView {
-    border-right: 3px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.NoteView .note-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+}
+
+.NoteView .fret {
+    float: right;
+    background: #ddd;
+    width: 3px;
+    height: 4vh;
+    margin-right: 0;
+    box-shadow: #444 1px 0px 2px;
 }
 
 .NoteView .string {
@@ -14,6 +28,7 @@
     top: calc(50% - 1px);
     float: left;
     z-index: 2;
+    box-shadow: #444 1px 1px 5px;
 }
 
 .NoteView .note {
