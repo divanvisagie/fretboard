@@ -1,0 +1,33 @@
+.NoteView {
+    border-right: 3px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.NoteView .string {
+    background: grey;
+    height: 2px;
+    width: 100%;
+    position: relative;
+    top: calc(50% - 1px);
+    float: left;
+    z-index: 1;
+}
+
+.NoteView .note {
+    font-size: 12pt;
+    background: white;
+    width: 26px;   
+    height: 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 2;
+    margin: auto;
+    box-shadow: #444 1px 1px 3px;
+}

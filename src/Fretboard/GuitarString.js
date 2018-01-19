@@ -8,6 +8,8 @@ import _ from 'underscore'
 import GuitarStringModel from '../Core/GuitarString'
 import Note from '../Core/Note'
 
+import NoteView from './NoteView'
+
 class GuitarString extends Component {
   constructor (props) {
     super(props)
@@ -25,14 +27,9 @@ class GuitarString extends Component {
   render () {
     return (
       <div className="GuitarString">
-        <div className='note'>
-          {this.rootNote.toString()}
-        </div>
-
-        {this.notes.map((noteName) =>
-          <div className='note'>
-            {noteName.toString()}
-          </div>
+        <NoteView note={this.rootNote} />
+        {this.notes.map((note) =>
+          <NoteView note={note} />
         )}
       </div>
     )
