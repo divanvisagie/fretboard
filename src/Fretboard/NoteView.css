@@ -31,3 +31,8 @@
     margin: auto;
     box-shadow: #444 1px 1px 3px;
 }
+
+.NoteView .note:hover { 
+    background: #ddd;
+    box-shadow: #777 0px 0px 2px;
+}
