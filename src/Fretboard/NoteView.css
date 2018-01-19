@@ -14,10 +14,11 @@
 .NoteView .fret {
     float: right;
     background: #ddd;
+    overflow: hidden;
     width: 3px;
     height: 4vh;
     margin-right: 0;
-    box-shadow: #444 1px 0px 2px;
+    box-shadow: #444 0px 0px 2px;
 }
 
 .NoteView .string {

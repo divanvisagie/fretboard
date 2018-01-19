@@ -1,7 +1,7 @@
 'use strict'
 
 import React, {Component} from 'react'
-import _ from './NoteView.css'
+import './NoteView.css'
 
 class NoteView extends Component {
   render () {

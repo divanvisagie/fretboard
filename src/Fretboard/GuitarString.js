@@ -1,5 +1,3 @@
-'use strict'
-
 import React, {Component} from 'react'
 import './GuitarString.css'
 
@@ -9,11 +7,14 @@ import GuitarStringModel from '../Core/GuitarString'
 import Note from '../Core/Note'
 
 import NoteView from './NoteView'
+import NutView from './NutView'
 
 class GuitarString extends Component {
   constructor (props) {
     super(props)
-    const guitarString = GuitarStringModel(this.props.rootNote, this.props.frets)
+    const guitarString = GuitarStringModel(
+      this.props.rootNote,
+      this.props.frets)
     const rootNote = Note(this.props.rootNote)
     const notes = _.range(this.props.frets).map((x) => {
       const fret = parseInt(x, 10)
@@ -27,7 +28,7 @@ class GuitarString extends Component {
   render () {
     return (
       <div className="GuitarString">
-        <NoteView note={this.rootNote} />
+        <NutView note={this.rootNote} />
         {this.notes.map((note) =>
           <NoteView note={note} />
         )}

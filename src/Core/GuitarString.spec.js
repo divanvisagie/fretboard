@@ -6,7 +6,6 @@ import GuitarString from './GuitarString'
 
 describe('when creating a new guitar string object', () => {
   describe('when creating a string with the root note e', () => {
-
     const guitarString = GuitarString('E', 24)
 
     it('should return e for index 12', () => {
