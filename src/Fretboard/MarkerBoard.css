@@ -1,0 +1,16 @@
+.MarkerBoard {
+    background: rgb(177, 159, 81);
+    display: flex;
+    flex-direction: row;
+}
+
+.MarkerBoard .nut {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.897);
+    max-width: 38px;
+}
+
+.MarkerBoard .fret {
+    width: 100%;
+    min-width: 48px;
+}

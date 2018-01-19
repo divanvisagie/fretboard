@@ -16,9 +16,8 @@ class GuitarString extends Component {
       this.props.rootNote,
       this.props.frets)
     const rootNote = Note(this.props.rootNote)
-    const notes = _.range(this.props.frets).map((x) => {
-      const fret = parseInt(x, 10)
-      return guitarString.noteAtFret(fret)
+    const notes = _.range(1, this.props.frets + 1, 1).map((x) => {
+      return guitarString.noteAtFret(x)
     })
 
     this.notes = notes

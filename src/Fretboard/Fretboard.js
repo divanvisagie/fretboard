@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './Fretboard.css'
 
+import MarkerBoard from './MarkerBoard'
+
 import GuitarString from './GuitarString'
 
 class Fretboard extends Component {
@@ -8,12 +10,13 @@ class Fretboard extends Component {
     const frets = 24
     return (
       <div className="Fretboard">
-        <GuitarString rootNote='E' frets={frets}></GuitarString>
-        <GuitarString rootNote='B' frets={frets}></GuitarString>
-        <GuitarString rootNote='G' frets={frets}></GuitarString>
-        <GuitarString rootNote='D' frets={frets}></GuitarString>
-        <GuitarString rootNote='A' frets={frets}></GuitarString>
-        <GuitarString rootNote='E' frets={frets}></GuitarString>
+        <GuitarString rootNote='E' frets={frets}/>
+        <GuitarString rootNote='B' frets={frets}/>
+        <GuitarString rootNote='G' frets={frets}/>
+        <GuitarString rootNote='D' frets={frets}/>
+        <GuitarString rootNote='A' frets={frets}/>
+        <GuitarString rootNote='E' frets={frets}/>
+        <MarkerBoard frets={frets}/>
       </div>
     )
   }
