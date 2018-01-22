@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import './App.css'
-import icon from './icon.png'
-import Icon from './Icon/Icon'
 import Fretboard from './Fretboard/Fretboard'
 
 class App extends Component {
