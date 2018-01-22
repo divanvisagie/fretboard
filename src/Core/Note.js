@@ -10,6 +10,7 @@ const noteOrder = [
   'D#',
   'E',
   'F',
+  'F#',
   'G',
   'G#'
 ]

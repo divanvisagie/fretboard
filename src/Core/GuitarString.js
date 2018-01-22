@@ -7,7 +7,7 @@ function GuitarString (root, length) {
       return root
     },
     noteAtFret (index) {
-      return rootNote.next(index - 1)
+      return rootNote.next(index)
     }
   }
 }
