@@ -9,12 +9,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        
+        <div className="App-logo">
+          <Icon/>
+          </div> 
           <h1 className="App-title">Welcome to Fretboard</h1>
         </header>
-        <div className="App-logo">
-          <img src={icon} />
-          </div>
+     
         <div className="App-fretboard-container">
           <Fretboard/>
         </div>
