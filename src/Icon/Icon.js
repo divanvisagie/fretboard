@@ -22,9 +22,6 @@ class Icon extends Component {
           <div className="fret"></div>
         </div>
 
-
-
-
       </div>
     )
   }
