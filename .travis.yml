@@ -1,9 +1,21 @@
 language: node_js
 
-# test on two node.js versions: 0.6 and 0.8
 node_js:
   - 9.0
-  - 8.0
+
+sudo: required
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then
+      brew update;
+      brew install sbt;
+      brew tap tcnksm/ghr;
+      brew install ghr;
+    else
+      sudo apt-get install -y fakeroot;
+      curl -sL -o ~/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme;
+      chmod +x ~/bin/gimme;
+      go get -u github.com/tcnksm/ghr; 
+    fi
 
 before_script:
   - npm install -g yarn
@@ -13,3 +25,14 @@ script:
   - yarn lint
   - yarn build
   - yarn test
+
+
+# We explicitly set the matrix
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode8
+
+
+after_success:
+  - sh deploy.sh

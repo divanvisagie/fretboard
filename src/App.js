@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import './App.css'
-import icon from './icon.png'
-import Icon from './Icon/Icon'
 import Fretboard from './Fretboard/Fretboard'
 
 class App extends Component {
@@ -9,12 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        
-          <h1 className="App-title">Welcome to Fretboard</h1>
+          <h1 className="App-title">Standard E</h1>
         </header>
-        <div className="App-logo">
-          <img src={icon} />
-          </div>
+
         <div className="App-fretboard-container">
           <Fretboard/>
         </div>

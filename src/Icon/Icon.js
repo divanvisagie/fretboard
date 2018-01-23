@@ -7,10 +7,10 @@ class Icon extends Component {
     return (
       <div className="Icon">
         <div className="strings">
+          <div className="string outer"></div>
           <div className="string"></div>
           <div className="string"></div>
-          <div className="string"></div>
-          <div className="string"></div>
+          <div className="string outer"></div>
         </div>
 
         <div className="fret-board">
@@ -21,9 +21,6 @@ class Icon extends Component {
           </div>
           <div className="fret"></div>
         </div>
-
-
-
 
       </div>
     )
