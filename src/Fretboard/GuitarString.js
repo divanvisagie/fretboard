@@ -10,25 +10,23 @@ import NoteView from './NoteView'
 import NutView from './NutView'
 
 class GuitarString extends Component {
-  constructor (props) {
-    super(props)
+  getNotes (frets, rootNote) {
     const guitarString = GuitarStringModel(
-      this.props.rootNote,
-      this.props.frets)
-    const rootNote = Note(this.props.rootNote)
-    const notes = _.range(1, this.props.frets + 1, 1).map((x) => {
+      rootNote,
+      frets)
+    const notes = _.range(1, frets + 1, 1).map((x) => {
       return guitarString.noteAtFret(x)
     })
 
-    this.notes = notes
-    this.rootNote = rootNote
+    return notes
   }
 
   render () {
     return (
       <div className="GuitarString">
-        <NutView note={this.rootNote} />
-        {this.notes.map((note, index) =>
+      {this.props.frets}
+        <NutView note={Note(this.props.rootNote)} />
+        {this.getNotes(this.props.frets, this.props.rootNote).map((note, index) =>
           <NoteView note={note} key={index}/>
         )}
       </div>

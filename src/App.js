@@ -16,7 +16,7 @@ const theme = createMuiTheme({
 class App extends Component {
 
   state = {
-    age: 20
+    frets: 24
   }
 
   handleChange = name => event => {
@@ -27,31 +27,28 @@ class App extends Component {
 
   render () {
 
-   
-
-
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">{this.state.age}</h1>
+          <h1 className="App-title">{this.state.frets} Frets</h1>
         </header>
 
         <MuiThemeProvider theme={theme}>
         <Select
         native
-        value={this.state.age}
-        onChange={this.handleChange('age')}
+        value={this.state.frets}
+        onChange={this.handleChange('frets')}
         inputProps={{
           id: 'age-native-simple',
         }}>
         <option value="" />
-        <option value={10}>Ten</option>
-        <option value={20}>Twenty</option>
-        <option value={30}>Thirty</option>
+        <option value={12}>12</option>
+        <option value={22}>22</option>
+        <option value={24}>24</option>
       </Select>
 
         <div className="App-fretboard-container">
-          <Fretboard/>
+          <Fretboard frets={this.state.frets}/>
         </div>
         </MuiThemeProvider>
       </div>

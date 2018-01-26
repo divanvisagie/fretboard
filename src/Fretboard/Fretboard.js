@@ -7,18 +7,17 @@ import GuitarString from './GuitarString'
 
 class Fretboard extends Component {
   render () {
-    const frets = 24
     return (
       <div className="Fretboard">
         <div>
-          <GuitarString rootNote='E' frets={frets}/>
-          <GuitarString rootNote='B' frets={frets}/>
-          <GuitarString rootNote='G' frets={frets}/>
-          <GuitarString rootNote='D' frets={frets}/>
-          <GuitarString rootNote='A' frets={frets}/>
-          <GuitarString rootNote='E' frets={frets}/>
+          <GuitarString rootNote='E' frets={this.props.frets}/>
+          <GuitarString rootNote='B' frets={this.props.frets}/>
+          <GuitarString rootNote='G' frets={this.props.frets}/>
+          <GuitarString rootNote='D' frets={this.props.frets}/>
+          <GuitarString rootNote='A' frets={this.props.frets}/>
+          <GuitarString rootNote='E' frets={this.props.frets}/>
         </div>
-        <MarkerBoard frets={frets}/>
+        <MarkerBoard frets={this.props.frets}/>
       </div>
     )
   }
