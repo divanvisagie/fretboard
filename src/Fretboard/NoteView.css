@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-width: 48px;
+    min-width: 42px;
 }
 
 .NoteView .note-area {
@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    min-width: 32px;
+    min-width: 30px;
 }
 
 .NoteView .fret {
@@ -18,7 +18,7 @@
     background: #ddd;
     overflow: hidden;
     width: 3px;
-    height: 4vh;
+    height: 100%;;
     margin-right: 0;
     box-shadow: #444 0px 0px 2px;
 }
@@ -35,10 +35,10 @@
 }
 
 .NoteView .note {
-    font-size: 12pt;
+    font-size: 11pt;
     background: white;
-    width: 26px;   
-    height: 26px;
+    width: 24px;   
+    height: 24px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;

@@ -1,5 +1,9 @@
 .Fretboard {
     background: rgb(202, 181, 86);
-    max-width: calc(100% - 40px);
+    /* max-width: calc(100% - 40px); */
     box-shadow: rgba(0, 0, 0, 0.288) 5px 5px 7px;
+
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
 }
