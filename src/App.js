@@ -28,13 +28,9 @@ class App extends Component {
         </header>
 
         <select
-          native
           value={this.state.frets}
           onChange={this.handleChange('frets')}
-          inputProps={{
-            id: 'age-native-simple',
-          }}>
-          <option value="" />
+        >
           <option value={12}>12</option>
           <option value={22}>22</option>
           <option value={24}>24</option>
