@@ -2,15 +2,9 @@ import React, {Component} from 'react'
 import './App.css'
 import Fretboard from './Fretboard/Fretboard'
 
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 
 import Select from 'material-ui/Select'
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark', // Switching the dark mode on is a single property value change.
-  },
-});
 
 
 class App extends Component {
@@ -33,24 +27,22 @@ class App extends Component {
           <h1 className="App-title">{this.state.frets} Frets</h1>
         </header>
 
-        <MuiThemeProvider theme={theme}>
-        <Select
-        native
-        value={this.state.frets}
-        onChange={this.handleChange('frets')}
-        inputProps={{
-          id: 'age-native-simple',
-        }}>
-        <option value="" />
-        <option value={12}>12</option>
-        <option value={22}>22</option>
-        <option value={24}>24</option>
-      </Select>
+        <select
+          native
+          value={this.state.frets}
+          onChange={this.handleChange('frets')}
+          inputProps={{
+            id: 'age-native-simple',
+          }}>
+          <option value="" />
+          <option value={12}>12</option>
+          <option value={22}>22</option>
+          <option value={24}>24</option>
+        </select>
 
         <div className="App-fretboard-container">
           <Fretboard frets={this.state.frets}/>
         </div>
-        </MuiThemeProvider>
       </div>
     )
   }
