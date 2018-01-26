@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
+    this.setState({ [name]: parseInt(event.target.value,10) });
   };
 
 

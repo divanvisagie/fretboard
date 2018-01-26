@@ -10,17 +10,16 @@
     background: rgba(255, 255, 255, 0.897);
     max-width: 38px;
     box-shadow: #444 1px 1px 5px;
-    min-width: 30px;
+    width: 30px;
 }
 
 .MarkerBoard .fret {
-    width: 100%;
-    min-width: 48px;
+    width: 42px;
 }
 
 .MarkerBoard .dot {
     width: 100%;
-    min-width: 48px;
+    width: 42px;
     color: white;
     font-size: 32px;
     line-height: 19px;

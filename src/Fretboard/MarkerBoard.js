@@ -2,15 +2,31 @@ import React, {Component} from 'react'
 
 import _ from 'underscore'
 import './MarkerBoard.css'
+import PropTypes from 'prop-types'
 
 class MarkerBoard extends Component {
+  state = {
+    range: []
+  }
+
   constructor (props) {
     super(props)
 
-    this.range = _.range(1, this.props.frets + 1).map(x => x)
+   
+    this.state.range = this.getRange(this.props.frets)
+  
     this.dots = [
       3, 5, 7, 9, 12, 15, 17, 19, 21, 24
     ]
+  }
+
+  getRange (frets) {
+    let range = []
+    for (let i = 1; i < frets + 1; i++) {
+      range.push(i)
+    }
+    console.log(range.length, frets)
+    return range
   }
 
   drawDot (value) {
@@ -25,12 +41,19 @@ class MarkerBoard extends Component {
     }
   }
 
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      range: this.getRange(nextProps.frets)
+    })
+  }
+
+
   render () {
     return (
       <div className="MarkerBoard">
         <div className="nut"></div>
 
-        {this.range.map((x, i) =>
+        {this.state.range.map((x, i) =>
           <div className="fret" key={i}>
             {this.drawDot(x)}
           </div>
@@ -38,6 +61,10 @@ class MarkerBoard extends Component {
       </div>
     )
   }
+}
+
+MarkerBoard.propTypes = {
+  frets: PropTypes.number
 }
 
 export default MarkerBoard

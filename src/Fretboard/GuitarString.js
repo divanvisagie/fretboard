@@ -28,7 +28,7 @@ class GuitarString extends Component {
   getNotes({rootNote, frets}) {
     const guitarString = GuitarStringModel(rootNote, frets)
     let notes = []
-    for(let i = 1; i < frets; i++) {
+    for(let i = 1; i < frets + 1; i++) {
       notes.push(guitarString.noteAtFret(i))
     }
     return notes;
@@ -41,7 +41,6 @@ class GuitarString extends Component {
         frets: nextProps.frets
       })
     })
-    this.forceUpdate()
   }
 
   render () {
