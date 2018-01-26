@@ -3,6 +3,8 @@ import './Fretboard.css'
 
 import MarkerBoard from './MarkerBoard'
 
+import _ from 'underscore'
+
 import GuitarString from './GuitarString'
 
 class Fretboard extends Component {
@@ -10,12 +12,9 @@ class Fretboard extends Component {
     return (
       <div className="Fretboard">
         <div>
-          <GuitarString rootNote='E' frets={this.props.frets} key="1" />
-          <GuitarString rootNote='B' frets={this.props.frets} key="2" />
-          <GuitarString rootNote='G' frets={this.props.frets} key="3" />
-          <GuitarString rootNote='D' frets={this.props.frets} key="4" />
-          <GuitarString rootNote='A' frets={this.props.frets} key="5" />
-          <GuitarString rootNote='E' frets={this.props.frets} key="6" />
+          {this.props.tuning.reverse().map((note, i) =>
+            <GuitarString rootNote={note} frets={this.props.frets} key={i} />
+          )}
         </div>
         <MarkerBoard frets={this.props.frets}/>
       </div>
