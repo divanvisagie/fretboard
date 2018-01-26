@@ -3,7 +3,7 @@
     /* max-width: calc(100% - 40px); */
     box-shadow: rgba(0, 0, 0, 0.288) 5px 5px 7px;
 
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     display: flex;
     flex-direction: column;

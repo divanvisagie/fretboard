@@ -1,5 +1,5 @@
 .NutView {
     background: white;
     box-shadow: #444 1px 1px 5px;
-    min-width: 30px;
+    width: 30px;
 }

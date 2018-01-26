@@ -5,7 +5,13 @@ import Fretboard from './Fretboard/Fretboard'
 
 import Select from 'material-ui/Select'
 
-
+const tuningMap = {
+  'Standard E': ['E','A','D','G','B','E'],
+  'Standard C': ['C','F','A#','D#','G','C'],
+  'Drop C': ['C','G','C','F','A','D'],
+  'Standard B (7 String)': ['B','E','A','D','G','B','E'],
+  'Bass E': ['E','A','D','G']
+}
 
 class App extends Component {
 
@@ -16,11 +22,6 @@ class App extends Component {
   }
 
   getTuning(key) {
-    const tuningMap = {
-      'Standard E': ['E','A','D','G','B','E'],
-      'Standard C': ['C','F','A#','D#','G','C'],
-      'Drop C': ['C','G','C','F','A','D']
-    }
     return tuningMap[key]
   }
 
@@ -43,14 +44,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">{this.state.frets} Frets</h1>
+          <h1 className="App-title">{this.state.tuningValue} Tuning,  {this.state.frets} Frets</h1>
         </header>
 
         <select value={this.state.tuningValue} 
           onChange={this.handleTuningChange()} >
-          <option value="Standard E">Standard E</option>
-          <option value="Drop C">Drop C</option>
-          <option value="Standard C">Standard C</option>
+          {Object.keys(tuningMap).map(x => 
+            <option value={x}>{x}</option>
+          )}
         </select>
 
         <select
