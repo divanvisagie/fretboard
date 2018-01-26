@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import './Fretboard.css'
 
-import MarkerBoard from './MarkerBoard'
+import {reverse} from 'ramda'
 
-import _ from 'underscore'
+import MarkerBoard from './MarkerBoard'
 
 import GuitarString from './GuitarString'
 
@@ -12,7 +12,7 @@ class Fretboard extends Component {
     return (
       <div className="Fretboard">
         <div>
-          {this.props.tuning.reverse().map((note, i) =>
+          {reverse(this.props.tuning).map((note, i) =>
             <GuitarString rootNote={note} frets={this.props.frets} key={i} />
           )}
         </div>
