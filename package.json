@@ -1,6 +1,6 @@
 {
   "name": "fretboard",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "author": "Divan Visagie",
   "homepage": "./",
   "private": true,
@@ -13,7 +13,6 @@
     "ramda": "^0.25.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
     "underscore": "^1.8.3"
   },
