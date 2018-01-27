@@ -4,6 +4,7 @@ import './App.css'
 import FretboardConnector from './Fretboard/FretboardConnector'
 import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
 
+import SettingsConnector from './Settings/SettingsConnector'
 
 
 const tuningMap = {
@@ -47,6 +48,7 @@ class App extends Component {
         </header>
 
         <TuningSelectorConnector />
+        <SettingsConnector />
 
 
         <div className="App-fretboard-container">
