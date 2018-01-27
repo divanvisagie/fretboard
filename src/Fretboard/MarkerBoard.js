@@ -11,9 +11,8 @@ class MarkerBoard extends Component {
   constructor (props) {
     super(props)
 
-   
     this.state.range = this.getRange(this.props.frets)
-  
+
     this.dots = [
       3, 5, 7, 9, 12, 15, 17, 19, 21, 24
     ]
@@ -24,7 +23,6 @@ class MarkerBoard extends Component {
     for (let i = 1; i < frets + 1; i++) {
       range.push(i)
     }
-    console.log(range.length, frets)
     return range
   }
 
@@ -45,7 +43,6 @@ class MarkerBoard extends Component {
       range: this.getRange(nextProps.frets)
     })
   }
-
 
   render () {
     return (

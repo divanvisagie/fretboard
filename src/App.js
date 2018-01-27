@@ -8,39 +8,37 @@ import SettingsConnector from './Settings/SettingsConnector'
 import TuningDisplayConnector from './Tuning/TuningDisplay'
 
 const tuningMap = {
-  'Standard E': ['E','A','D','G','B','E'],
-  'Standard C': ['C','F','A#','D#','G','C'],
-  'Drop C': ['C','G','C','F','A','D'],
-  'Standard B (7 String)': ['B','E','A','D','G','B','E'],
-  'Bass E': ['E','A','D','G']
+  'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
+  'Standard C'           : ['C', 'F', 'A#', 'D#', 'G', 'C'],
+  'Drop C'               : ['C', 'G', 'C', 'F', 'A', 'D'],
+  'Standard B (7 String)': ['B', 'E', 'A', 'D', 'G', 'B', 'E'],
+  'Bass E'               : ['E', 'A', 'D', 'G']
 }
 
 class App extends Component {
-
   state = {
-    frets: 24,
+    frets      : 24,
     tuningValue: 'Standard E',
-    tuning: this.getTuning('Standard E')
+    tuning     : this.getTuning('Standard E')
   }
 
-  getTuning(key) {
+  getTuning (key) {
     return tuningMap[key]
   }
 
   handleTuningChange = name => event => {
     const tuning = this.getTuning(event.target.value)
-    this.setState({ 
+    this.setState({
       tuningValue: event.target.value,
-      tuning 
+      tuning
     })
   };
 
   handleFretChange = name => event => {
-    this.setState({ frets: parseInt(event.target.value,10) })
+    this.setState({ frets: parseInt(event.target.value, 10) })
   };
 
   render () {
-
     return (
       <div className="App">
         <header className="App-header">
@@ -51,7 +49,6 @@ class App extends Component {
 
         <TuningSelectorConnector />
         <SettingsConnector />
-
 
         <div className="App-fretboard-container">
           <FretboardConnector />
