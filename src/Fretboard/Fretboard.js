@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './Fretboard.css'
 
+
+
 import {reverse} from 'ramda'
 
 import MarkerBoard from './MarkerBoard'

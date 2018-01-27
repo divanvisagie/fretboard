@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import './App.css'
 import Fretboard from './Fretboard/Fretboard'
 
+import FretboardConnector from './Fretboard/FretboardConnector'
+import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
+
 
 import Select from 'material-ui/Select'
 
@@ -45,12 +48,14 @@ class App extends Component {
           <h1 className="App-title">{this.state.tuningValue} Tuning,  {this.state.frets} Frets</h1>
         </header>
 
-        <select value={this.state.tuningValue} 
+        {/* <select value={this.state.tuningValue} 
           onChange={this.handleTuningChange()} >
           {Object.keys(tuningMap).map(x => 
             <option value={x}>{x}</option>
           )}
-        </select>
+        </select> */}
+
+        <TuningSelectorConnector />
 
         <select
           value={this.state.frets}
@@ -62,7 +67,7 @@ class App extends Component {
         </select>
 
         <div className="App-fretboard-container">
-          <Fretboard frets={this.state.frets} tuning={this.state.tuning} />
+          <FretboardConnector />
         </div>
       </div>
     )
