@@ -10,6 +10,10 @@ function focusNote (state = '', action) {
   }
 }
 
+function frets() {
+    return 24
+}
+
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
   'Standard C'           : ['C', 'F', 'A#', 'D#', 'G', 'C'],
@@ -41,6 +45,7 @@ function tuning (state = tuningDefault, action) {
 
 export default combineReducers({
   focusNote,
+  frets,
   tuningOptions,
   tuning
 })

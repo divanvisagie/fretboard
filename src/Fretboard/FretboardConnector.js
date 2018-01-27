@@ -3,8 +3,9 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
   return {
-    tuning: state.tuning.value,
-    frets : 12
+    tuning   : state.tuning.value,
+    frets    : state.frets,
+    focusNote: state.focusNote
   }
 }
 const mapDispatchToProps = (dispatch) => {
