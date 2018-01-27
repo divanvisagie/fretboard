@@ -10,8 +10,11 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick () {
-      dispatch({ type: 'SET_FOCUS_NOTE' })
+    onNoteClick (note) {
+      dispatch({
+        type : 'SET_FOCUS_NOTE',
+        value: note
+      })
     }
   }
 }

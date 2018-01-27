@@ -11,6 +11,10 @@ class NoteView extends Component {
     return 'note'
   }
 
+  handleClick = () => {
+    this.props.onClick(this.props.note.toString())
+  }
+
   render () {
     return (
       <div className='NoteView'>
@@ -18,7 +22,8 @@ class NoteView extends Component {
           <div className='string'></div>
           <div className={this.getClasses(
             this.props.note,
-            this.props.focusNote)}>
+            this.props.focusNote)}
+          onClick={this.handleClick}>
             {this.props.note.toString()}
           </div>
         </div>

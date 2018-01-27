@@ -15,6 +15,7 @@ class Fretboard extends Component {
           {reverse(this.props.tuning).map((note, i) =>
             <GuitarString rootNote={note}
               frets={this.props.frets}
+              onClick={this.props.onNoteClick}
               key={i}
               focusNote={this.props.focusNote} />
           )}

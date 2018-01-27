@@ -4,10 +4,14 @@ import frets from './frets'
 
 import {tuningOptions, tuning} from './tuning'
 
-function focusNote (state = 'E', action) {
+function focusNote (state = '', action) {
   switch (action.type) {
   case 'SET_FOCUS_NOTE':
-    state = action.value
+    if (state === action.value) {
+      state = ''
+    } else {
+      state = action.value
+    }
     return state
   default:
     return state
