@@ -37,8 +37,6 @@ class App extends Component {
     this.setState({ frets: parseInt(event.target.value,10) })
   };
 
-
-
   render () {
 
     return (
