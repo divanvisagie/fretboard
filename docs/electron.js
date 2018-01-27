@@ -11,7 +11,7 @@ let mainWindow
 function createWindow () {
   mainWindow = new BrowserWindow({
     width : 1300,
-    height: 680,
+    height: 400,
     icon  : path.join(__dirname, '/icon.png')
   })
   mainWindow.loadURL(isDev ? 'http://localhost:3000'
