@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
   <select value={tuning.name}
     onChange={handleTuningChange} >
-    {tuningOptions.map(x =>
-      <option value={x}>{x}</option>
+    {tuningOptions.map((x, key) =>
+      <option value={x} key={key}>{x}</option>
     )}
   </select>
 

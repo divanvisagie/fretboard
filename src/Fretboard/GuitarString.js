@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import './GuitarString.css'
 
-import _ from 'underscore'
-
 import GuitarStringModel from '../Core/GuitarString'
 import Note from '../Core/Note'
 
@@ -46,7 +44,6 @@ class GuitarString extends Component {
   render () {
     return (
       <div className="GuitarString">
-        {/* {this.props.frets} */}
         <NutView note={Note(this.props.rootNote)} />
         {this.state.notes.map((note, index) =>
           <NoteView note={note} key={index+note.toString()}/>

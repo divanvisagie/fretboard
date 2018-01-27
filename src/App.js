@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
 import './App.css'
-import Fretboard from './Fretboard/Fretboard'
 
 import FretboardConnector from './Fretboard/FretboardConnector'
 import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
 
 
-import Select from 'material-ui/Select'
 
 const tuningMap = {
   'Standard E': ['E','A','D','G','B','E'],

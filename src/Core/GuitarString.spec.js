@@ -1,6 +1,5 @@
 'use strict'
 
-import _ from 'underscore'
 import Note from './Note'
 import GuitarString from './GuitarString'
 
