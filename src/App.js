@@ -5,7 +5,7 @@ import FretboardConnector from './Fretboard/FretboardConnector'
 import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
 
 import SettingsConnector from './Settings/SettingsConnector'
-
+import TuningDisplayConnector from './Tuning/TuningDisplay'
 
 const tuningMap = {
   'Standard E': ['E','A','D','G','B','E'],
@@ -44,7 +44,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">{this.state.tuningValue} Tuning,  {this.state.frets} Frets</h1>
+          <h1 className="App-title">
+            <TuningDisplayConnector/>
+          </h1>
         </header>
 
         <TuningSelectorConnector />
