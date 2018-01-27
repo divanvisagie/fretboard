@@ -46,23 +46,8 @@ class App extends Component {
           <h1 className="App-title">{this.state.tuningValue} Tuning,  {this.state.frets} Frets</h1>
         </header>
 
-        {/* <select value={this.state.tuningValue} 
-          onChange={this.handleTuningChange()} >
-          {Object.keys(tuningMap).map(x => 
-            <option value={x}>{x}</option>
-          )}
-        </select> */}
-
         <TuningSelectorConnector />
 
-        <select
-          value={this.state.frets}
-          onChange={this.handleFretChange()}
-        >
-          <option value={12}>12</option>
-          <option value={22}>22</option>
-          <option value={24}>24</option>
-        </select>
 
         <div className="App-fretboard-container">
           <FretboardConnector />
