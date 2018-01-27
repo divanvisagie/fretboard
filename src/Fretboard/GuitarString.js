@@ -44,7 +44,9 @@ class GuitarString extends Component {
       <div className="GuitarString">
         <NutView note={Note(this.props.rootNote)} />
         {this.state.notes.map((note, index) =>
-          <NoteView note={note} key={index + note.toString()}/>
+          <NoteView note={note}
+            focusNote={this.props.focusNote}
+            key={index + note.toString()}/>
         )}
       </div>
     )

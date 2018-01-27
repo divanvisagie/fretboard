@@ -34,6 +34,10 @@
     box-shadow: #444 1px 1px 5px;
 }
 
+.NoteView .highlight {
+    background: red !important;
+}
+
 .NoteView .note {
     font-size: 10pt;
     background: white;

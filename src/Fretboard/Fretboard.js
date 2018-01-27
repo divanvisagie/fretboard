@@ -13,7 +13,10 @@ class Fretboard extends Component {
       <div className="Fretboard">
         <div>
           {reverse(this.props.tuning).map((note, i) =>
-            <GuitarString rootNote={note} frets={this.props.frets} key={i} />
+            <GuitarString rootNote={note}
+              frets={this.props.frets}
+              key={i}
+              focusNote={this.props.focusNote} />
           )}
         </div>
         <MarkerBoard frets={this.props.frets}/>
