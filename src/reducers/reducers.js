@@ -10,8 +10,8 @@ function focusNote (state = '', action) {
   }
 }
 
-function frets() {
-    return 24
+function frets () {
+  return 24
 }
 
 const tuningMap = {
