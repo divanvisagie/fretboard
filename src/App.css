@@ -1,6 +1,7 @@
 .App {
   /* display: flex; */
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App .menu-button {
