@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import ReactGA from 'react-ga'
 
 import './index.css'
 import App from './App'
@@ -14,6 +15,11 @@ let store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+ReactGA.initialize('UA-113213939-1', {
+  debug: true // (window.location.hostname !== 'dvisagie.com')
+})
+ReactGA.pageview(window.location.pathname)
+
 ReactDOM.render(
 
   <Provider store={store}>
@@ -22,4 +28,4 @@ ReactDOM.render(
   ,
   document.getElementById('root'))
 
-registerServiceWorker()
+// registerServiceWorker()
