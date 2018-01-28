@@ -10,6 +10,9 @@ import TuningDisplayConnector from './Tuning/TuningDisplay'
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+import AppBar from 'material-ui/AppBar'
+import Toolbar from 'material-ui/Toolbar'
+import Typography from 'material-ui/Typography'
 
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
@@ -63,15 +66,18 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <div className="App">
-          <header className="App-header">
-            {this.renderRibbon()}
-            <h1 className="App-title">
-              <TuningDisplayConnector/>
-            </h1>
-          </header>
 
-          <TuningSelectorConnector />
-          <SettingsConnector />
+          <AppBar position="static" color="default" >
+            <Toolbar className="App-toolbar">
+              <Typography type="title" color="inherit" className="App-title">
+                Fretboard
+              </Typography>
+              <div className="menu-button">
+                <TuningSelectorConnector />
+                <SettingsConnector />
+              </div>
+            </Toolbar>
+          </AppBar>
 
           <div className="App-fretboard-container">
             <FretboardConnector />

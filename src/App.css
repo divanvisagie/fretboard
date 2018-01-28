@@ -1,5 +1,13 @@
 .App {
+  /* display: flex; */
   text-align: center;
+}
+
+.App .menu-button {
+  margin-right: 20px;
+  flex:1;
+  text-align: right;
+  padding-right: 20px;
 }
 
 .App-logo {
@@ -8,14 +16,17 @@
   width: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  padding: 20px;
-  color: white;
+.App-toolbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%
 }
 
 .App-title {
   font-size: 1.5em;
+  flex:1;
+  text-align: left;
 }
 
 .App-intro {
