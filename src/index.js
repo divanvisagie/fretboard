@@ -16,7 +16,7 @@ let store = createStore(
 )
 
 ReactGA.initialize('UA-113213939-1', {
-  debug: true // (window.location.hostname !== 'dvisagie.com')
+  debug: (window.location.hostname !== 'dvisagie.com')
 })
 ReactGA.pageview(window.location.pathname)
 
