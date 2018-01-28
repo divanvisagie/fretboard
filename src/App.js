@@ -13,6 +13,7 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
+import ReactGA from 'react-ga'
 
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
@@ -21,6 +22,11 @@ const tuningMap = {
   'Standard B (7 String)': ['B', 'E', 'A', 'D', 'G', 'B', 'E'],
   'Bass E'               : ['E', 'A', 'D', 'G']
 }
+
+ReactGA.initialize('UA-113213939-1', {
+  debug: (window.location.hostname !== 'dvisagie.com')
+})
+ReactGA.pageview(window.location.pathname)
 
 const theme = createMuiTheme({
   palette: {
