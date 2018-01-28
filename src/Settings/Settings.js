@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField'
 
 const Settings = ({handleFretsChange, frets}) =>
   <TextField type="number"
+    label="Frets"
     onChange={handleFretsChange}
     value={frets}
     InputLabelProps={{
