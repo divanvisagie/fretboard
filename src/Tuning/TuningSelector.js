@@ -7,7 +7,6 @@ import Input, { InputLabel } from 'material-ui/Input'
 import { FormControl } from 'material-ui/Form'
 
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
-
   <FormControl>
     <InputLabel htmlFor="tuning">Tuning</InputLabel>
     <Select
