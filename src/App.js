@@ -7,6 +7,10 @@ import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
 import SettingsConnector from './Settings/SettingsConnector'
 import TuningDisplayConnector from './Tuning/TuningDisplay'
 
+import GitHubForkRibbon from 'react-github-fork-ribbon'
+
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
   'Standard C'           : ['C', 'F', 'A#', 'D#', 'G', 'C'],
@@ -14,6 +18,12 @@ const tuningMap = {
   'Standard B (7 String)': ['B', 'E', 'A', 'D', 'G', 'B', 'E'],
   'Bass E'               : ['E', 'A', 'D', 'G']
 }
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark'
+  }
+})
 
 class App extends Component {
   state = {
@@ -38,22 +48,36 @@ class App extends Component {
     this.setState({ frets: parseInt(event.target.value, 10) })
   };
 
+  renderRibbon () {
+    if (window.location.hostname !== 'dvisagie.com') {
+      return <div></div>
+    }
+    return <GitHubForkRibbon href="https://github.com/divanvisagie/fretboard"
+      target="_blank"
+      position="right">
+        GitHub
+    </GitHubForkRibbon>
+  }
+
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">
-            <TuningDisplayConnector/>
-          </h1>
-        </header>
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
+          <header className="App-header">
+            {this.renderRibbon()}
+            <h1 className="App-title">
+              <TuningDisplayConnector/>
+            </h1>
+          </header>
 
-        <TuningSelectorConnector />
-        <SettingsConnector />
+          <TuningSelectorConnector />
+          <SettingsConnector />
 
-        <div className="App-fretboard-container">
-          <FretboardConnector />
+          <div className="App-fretboard-container">
+            <FretboardConnector />
+          </div>
         </div>
-      </div>
+      </MuiThemeProvider>
     )
   }
 }
