@@ -39,7 +39,6 @@ class GuitarString extends Component {
     })
   }
 
-
   render () {
     return (
       <div className="GuitarString">
