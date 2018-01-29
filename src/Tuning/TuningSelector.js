@@ -1,10 +1,10 @@
 import React from 'react'
 
 import Select from 'material-ui/Select'
-import { MenuItem } from 'material-ui/Menu'
+import {MenuItem} from 'material-ui/Menu'
 
-import Input, { InputLabel } from 'material-ui/Input'
-import { FormControl } from 'material-ui/Form'
+import Input, {InputLabel} from 'material-ui/Input'
+import {FormControl} from 'material-ui/Form'
 
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
   <FormControl>

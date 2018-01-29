@@ -70,3 +70,8 @@ function Note (name) {
 }
 
 export default Note
+
+const notes = noteOrder
+export {
+  notes
+}

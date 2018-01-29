@@ -9,10 +9,12 @@ import TuningDisplayConnector from './Tuning/TuningDisplay'
 
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
+
+import KeySelector from './Key/KeySelector'
 
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
@@ -38,18 +40,6 @@ class App extends Component {
   getTuning (key) {
     return tuningMap[key]
   }
-
-  handleTuningChange = name => event => {
-    const tuning = this.getTuning(event.target.value)
-    this.setState({
-      tuningValue: event.target.value,
-      tuning
-    })
-  };
-
-  handleFretChange = name => event => {
-    this.setState({ frets: parseInt(event.target.value, 10) })
-  };
 
   renderRibbon () {
     if (window.location.hostname !== 'dvisagie.com') {
@@ -79,6 +69,7 @@ class App extends Component {
             </Toolbar>
           </AppBar>
 
+          <KeySelector />
           <div className="App-fretboard-container">
             <FretboardConnector />
           </div>
