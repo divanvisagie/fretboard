@@ -69,7 +69,9 @@ class App extends Component {
             </Toolbar>
           </AppBar>
 
-          <KeySelector />
+          <div className="App-pre-fretboard">
+            <KeySelector />
+          </div>
           <div className="App-fretboard-container">
             <FretboardConnector />
           </div>

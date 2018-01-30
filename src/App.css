@@ -24,6 +24,11 @@
   width: 100%
 }
 
+.App-pre-fretboard {
+  margin: 20px;
+  text-align: left;
+}
+
 .App-title {
   font-size: 1.5em;
   flex:1;
