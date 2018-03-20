@@ -3,6 +3,7 @@ import './App.css'
 
 import Fretboard from './Fretboard/Fretboard'
 import TuningSelector from './Tuning/TuningSelector'
+import ScaleSelector from './ScaleSelector/ScaleSelector'
 
 import Settings from './Settings/Settings'
 import TuningDisplayConnector from './Tuning/TuningDisplay'
@@ -64,6 +65,7 @@ class App extends Component {
               </Typography>
               <div className="menu-button">
                 <TuningSelector />
+                {/* <ScaleSelector /> */}
                 <Settings />
               </div>
             </Toolbar>

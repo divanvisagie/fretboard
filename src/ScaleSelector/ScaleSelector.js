@@ -19,5 +19,26 @@ const ScaleSelectorComponent = ({focusNote,
     <Select
       value={scaleName}
       onChange={handleScaleChange}>
+
+      {scales.map((x, key) =>
+        <MenuItem value={x.name} key={key}>{x.name}</MenuItem>
+      )}
+
     </Select>
   </FormControl>
+
+const mapStateToProps = (state) => {
+  return {}
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+const ScaleSelectorConnector = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ScaleSelectorComponent)
+
+export default ScaleSelectorConnector
