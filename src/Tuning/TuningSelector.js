@@ -5,6 +5,7 @@ import {MenuItem} from 'material-ui/Menu'
 
 import Input, {InputLabel} from 'material-ui/Input'
 import {FormControl} from 'material-ui/Form'
+import {connect} from 'react-redux'
 
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
   <FormControl>
@@ -25,4 +26,26 @@ const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
     </Select>
   </FormControl>
 
-export default TuningSelector
+const mapStateToProps = (state) => {
+  return {
+    tuningOptions: state.tuningOptions,
+    tuning       : state.tuning
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleTuningChange (event) {
+      dispatch({
+        type: 'SET_TUNING',
+        name: event.target.value
+      })
+    }
+  }
+}
+
+const TuningSelectorConnector = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TuningSelector)
+
+export default TuningSelectorConnector

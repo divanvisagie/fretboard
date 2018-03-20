@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import './App.css'
 
-import FretboardConnector from './Fretboard/FretboardConnector'
-import TuningSelectorConnector from './Tuning/TuningSelectorConnector'
+import Fretboard from './Fretboard/Fretboard'
+import TuningSelector from './Tuning/TuningSelector'
 
 import SettingsConnector from './Settings/SettingsConnector'
 import TuningDisplayConnector from './Tuning/TuningDisplay'
@@ -63,7 +63,7 @@ class App extends Component {
                 Fretboard
               </Typography>
               <div className="menu-button">
-                <TuningSelectorConnector />
+                <TuningSelector />
                 <SettingsConnector />
               </div>
             </Toolbar>
@@ -73,7 +73,7 @@ class App extends Component {
             <KeySelector />
           </div>
           <div className="App-fretboard-container">
-            <FretboardConnector />
+            <Fretboard />
           </div>
         </div>
       </MuiThemeProvider>

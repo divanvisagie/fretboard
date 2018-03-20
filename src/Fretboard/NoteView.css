@@ -35,7 +35,7 @@
 }
 
 .NoteView .highlight {
-    background: red !important;
+    background: rgb(128, 228, 145) !important;
 }
 
 .NoteView .note {
