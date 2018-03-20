@@ -4,7 +4,7 @@ import './App.css'
 import Fretboard from './Fretboard/Fretboard'
 import TuningSelector from './Tuning/TuningSelector'
 
-import SettingsConnector from './Settings/SettingsConnector'
+import Settings from './Settings/Settings'
 import TuningDisplayConnector from './Tuning/TuningDisplay'
 
 import GitHubForkRibbon from 'react-github-fork-ribbon'
@@ -64,7 +64,7 @@ class App extends Component {
               </Typography>
               <div className="menu-button">
                 <TuningSelector />
-                <SettingsConnector />
+                <Settings />
               </div>
             </Toolbar>
           </AppBar>

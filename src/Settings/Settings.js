@@ -1,5 +1,6 @@
 import React from 'react'
 import TextField from 'material-ui/TextField'
+import {connect} from 'react-redux'
 
 const Settings = ({handleFretsChange, frets}) =>
   <TextField type="number"
@@ -13,4 +14,26 @@ const Settings = ({handleFretsChange, frets}) =>
     min={27}
     min={12} />
 
-export default Settings
+const mapStateToProps = (state) => {
+  return {
+    frets: state.frets
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleFretsChange (event) {
+      dispatch({
+        type : 'SET_FRETS',
+        value: event.target.value
+      })
+    }
+  }
+}
+
+const SettingsConnector = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Settings)
+
+export default SettingsConnector
