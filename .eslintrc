@@ -17,7 +17,7 @@
 		"react", "jest"
 	],
 	"rules": {
-		"max-len": ["error", { "code": 80, "tabWidth": 2 }],
+		"max-len": ["error", { "code": 150, "tabWidth": 2 }],
 		"indent": [
 			"warn", 2
 		],

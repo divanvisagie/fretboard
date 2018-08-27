@@ -10,14 +10,14 @@
     "global": "^4.3.2",
     "material-ui": "^1.0.0-beta.30",
     "material-ui-icons": "^1.0.0-beta.17",
-    "ramda": "^0.25.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-ga": "^2.4.1",
     "react-github-fork-ribbon": "^0.5.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "underscore": "^1.9.1"
   },
   "main": "public/electron.js",
   "scripts": {
