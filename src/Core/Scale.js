@@ -32,8 +32,6 @@ function Scale (note, sequence) {
         }
       }, reductionTarget)
 
-      // console.log(reduced)
-
       return reduced.seq
     }
   }
