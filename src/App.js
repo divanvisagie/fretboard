@@ -16,6 +16,7 @@ import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 
 import KeySelector from './Key/KeySelector'
+import ScaleView from './ScaleView'
 
 const tuningMap = {
   'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
@@ -76,6 +77,10 @@ class App extends Component {
           </div>
           <div className="App-fretboard-container">
             <Fretboard />
+          </div>
+
+          <div>
+            <ScaleView />
           </div>
         </div>
       </MuiThemeProvider>
