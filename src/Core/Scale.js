@@ -1,7 +1,7 @@
 'use strict'
 
 import Note from './Note'
-import _ from 'underscore'
+import {flatten, reduce} from 'ramda'
 
 const scales = [
   {
@@ -24,13 +24,13 @@ function Scale (note, sequence) {
         pointInScale: 0
       }
 
-      const reduced = _.reduce(sequence, (acc, i) => {
+      const reduced = reduce((acc, i) => {
         const nextNote = startNote.next(acc.pointInScale)
         return {
-          seq         : _.flatten([acc.seq, [nextNote]]),
+          seq         : flatten([acc.seq, [nextNote]]),
           pointInScale: acc.pointInScale + i
         }
-      }, reductionTarget)
+      }, reductionTarget, sequence)
 
       return reduced.seq
     }
