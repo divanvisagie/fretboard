@@ -10,6 +10,10 @@
     width: 320px;
 }
 
+.ScaleSelector-selector {
+    max-width: 320px;
+}
+
 .ScaleSelector-sequence span {
     width: 30px;
     padding: 5px 16px 5px 16px;

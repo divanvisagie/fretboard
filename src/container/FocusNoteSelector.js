@@ -3,6 +3,8 @@ import React, {Fragment} from 'react'
 
 import {notes} from '../core/Note'
 
+import './FocusNoteSelector.css'
+
 const mapStateToProps = (state) => {
     return {
         focusNote: state.focusNote
@@ -22,8 +24,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const KeySelectorComponent = ({focusNote, handleFocusNoteChange}) =>
     <Fragment>
-        <span htmlFor="tuning">Focus Note</span>
-        <select
+        <div>Focus Note</div>
+        <select className="FocusNoteSelector-selector"
             value={focusNote}
             onChange={handleFocusNoteChange}>
             {notes.map((x, key) =>

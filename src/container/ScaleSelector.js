@@ -26,7 +26,7 @@ class ScaleSelectorComponent extends Component {
                         <span key={key}>{n}</span>
                     )}
                 </div>
-                <select
+                <select className="ScaleSelector-selector"
                     value={scale.name}
                     onChange={event => handleScaleChange(targetNote, event.target.value)}>
 
