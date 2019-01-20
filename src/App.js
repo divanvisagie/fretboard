@@ -63,9 +63,6 @@ class App extends Component {
                   <Fretboard />
               </div>
 
-              <div>
-                  <ScaleView />
-              </div>
           </div>
       )
   }

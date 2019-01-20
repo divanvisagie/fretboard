@@ -3,6 +3,25 @@ import {connect} from 'react-redux'
 
 import {notes} from '../core/Note'
 
+class ScaleSelectorComponent extends Component {
+
+    render () {
+        const {focusNote, handleFocusNoteChange} = this.props
+        return (
+            <Fragment>
+                <span htmlFor="tuning">Focus Note</span>
+                <select
+                    value={focusNote}
+                    onChange={handleFocusNoteChange}>
+                    {notes.map((x, key) =>
+                        <option value={x} key={key}>{x}</option>
+                    )}
+                </select>
+            </Fragment>
+        )
+    }
+}
+
 const mapStateToProps = (state) => {
     return {
         focusNote: state.focusNote
@@ -19,18 +38,6 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
-const ScaleSelectorComponent = ({focusNote, handleFocusNoteChange}) =>
-    <Fragment>
-        <span htmlFor="tuning">Focus Note</span>
-        <select
-            value={focusNote}
-            onChange={handleFocusNoteChange}>
-            {notes.map((x, key) =>
-                <option value={x} key={key}>{x}</option>
-            )}
-        </select>
-    </Fragment>
 
 const ScaleView = connect(
     mapStateToProps,
