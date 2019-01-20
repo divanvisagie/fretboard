@@ -2,14 +2,13 @@
   "name": "fretboard",
   "version": "0.0.1",
   "author": "Divan Visagie",
-  "homepage": "./",
+  "homepage": "http://dvisagie.com/fretboard/",
   "private": true,
   "dependencies": {
     "concurrently": "^3.5.1",
     "electron-is-dev": "^0.3.0",
     "global": "^4.3.2",
-    "material-ui": "^1.0.0-beta.30",
-    "material-ui-icons": "^1.0.0-beta.17",
+    "milligram": "^1.3.0",
     "ramda": "^0.25.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -18,7 +17,8 @@
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "main": "public/electron.js",
   "scripts": {

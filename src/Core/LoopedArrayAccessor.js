@@ -1,19 +1,19 @@
 function LoopedAccessor (array) {
-  return {
-    getAtIndex (index) {
-      if (index < 0) {
-        const indexToUse = array.length + index
-        return array[indexToUse]
-      }
+    return {
+        getAtIndex (index) {
+            if (index < 0) {
+                const indexToUse = array.length + index
+                return array[indexToUse]
+            }
 
-      if (index >= array.length) {
-        let remainder = index % array.length
-        return array[remainder]
-      }
+            if (index >= array.length) {
+                let remainder = index % array.length
+                return array[remainder]
+            }
 
-      return array[index]
+            return array[index]
+        }
     }
-  }
 }
 
 export default LoopedAccessor
