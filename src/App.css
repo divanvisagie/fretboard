@@ -1,7 +1,8 @@
 .App {
-  /* display: flex; */
   text-align: center;
   overflow-x: hidden;
+  background: #fff;
+  height: 100vh;
 }
 
 .App .menu-button {
@@ -21,7 +22,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
+  padding: 6px;
+}
+
+.App-toolbar-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.App-toolbar-menu * {
+  margin-left: 16px;
 }
 
 .App-pre-fretboard {
@@ -44,6 +56,11 @@
   justify-content: center;
   margin: auto;
   margin-top: 20px;
+  background: #eee;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
+
+
 
 

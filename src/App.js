@@ -46,17 +46,13 @@ class App extends Component {
   render () {
       return (
           <div className="App">
-
-              <div position="static" color="default" >
-                  <div className="App-toolbar">
-
-                      <span>
-                Fretboard
-                      </span>
-                      <div className="menu-button">
-                          <TuningSelector />
-                          <Settings />
-                      </div>
+              <div className="App-toolbar">
+                  <span>
+                    Fretboard
+                  </span>
+                  <div className="App-toolbar-menu">
+                      <TuningSelector />
+                      <Settings />
                   </div>
               </div>
 
