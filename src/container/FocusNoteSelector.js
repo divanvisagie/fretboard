@@ -20,13 +20,8 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const style = {
-    minWidth : '100px',
-    alignText: 'left'
-}
-
 const KeySelectorComponent = ({focusNote, handleFocusNoteChange}) =>
-    <Fragment style={style}>
+    <Fragment>
         <span htmlFor="tuning">Focus Note</span>
         <select
             value={focusNote}

@@ -58,6 +58,7 @@ class App extends Component {
 
               <div className="App-pre-fretboard">
                   <FocusNoteSelector />
+                  <ScaleSelector/>
               </div>
               <div className="App-fretboard-container">
                   <Fretboard />
