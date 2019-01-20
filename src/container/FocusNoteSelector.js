@@ -37,9 +37,9 @@ const KeySelectorComponent = ({focusNote, handleFocusNoteChange}) =>
         </select>
     </Fragment>
 
-const KeySelector = connect(
+const FocusNoteSelector = connect(
     mapStateToProps,
     mapDispatchToProps
 )(KeySelectorComponent)
 
-export default KeySelector
+export default FocusNoteSelector

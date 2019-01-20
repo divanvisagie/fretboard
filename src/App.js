@@ -10,7 +10,7 @@ import TuningDisplayConnector from './container/TuningDisplay'
 
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
-import KeySelector from './container/KeySelector'
+import FocusNoteSelector from './container/FocusNoteSelector'
 import ScaleView from './container/ScaleView'
 
 const tuningMap = {
@@ -57,12 +57,11 @@ class App extends Component {
               </div>
 
               <div className="App-pre-fretboard">
-                  <KeySelector />
+                  <FocusNoteSelector />
               </div>
               <div className="App-fretboard-container">
                   <Fretboard />
               </div>
-
           </div>
       )
   }
