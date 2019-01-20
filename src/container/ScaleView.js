@@ -25,8 +25,7 @@ const ScaleSelectorComponent = ({focusNote, handleFocusNoteChange}) =>
         <span htmlFor="tuning">Focus Note</span>
         <select
             value={focusNote}
-            onChange={handleFocusNoteChange}
-        >
+            onChange={handleFocusNoteChange}>
             {notes.map((x, key) =>
                 <option value={x} key={key}>{x}</option>
             )}

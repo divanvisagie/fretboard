@@ -10,7 +10,6 @@ const ScaleSelectorComponent = ({focusNote,
     handleScaleChange}) =>
     <Fragment>
         <span>Scale</span>
-
         <select
             value={scaleName}
             onChange={handleScaleChange}>
