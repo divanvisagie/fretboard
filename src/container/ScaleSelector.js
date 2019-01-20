@@ -5,6 +5,8 @@ import React, {Fragment, Component} from 'react'
 import {notes} from '../core/Note'
 import {scales, Scale} from '../core/Scale'
 
+import './ScaleSelector.css'
+
 class ScaleSelectorComponent extends Component {
     render () {
         const {targetNote, scale, handleScaleChange} = this.props
@@ -14,12 +16,12 @@ class ScaleSelectorComponent extends Component {
         return (
             <Fragment>
                 <div>Scale</div>
-                <div>
+                <div className="ScaleSelector-sequence">
                     {scale.sequence.map((n, key) =>
                         <span key={key}>{n}</span>
                     )}
                 </div>
-                <div>
+                <div className="ScaleSelector-sequence">
                     {noteSequence.map((n, key) =>
                         <span key={key}>{n}</span>
                     )}

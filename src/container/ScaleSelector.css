@@ -1,0 +1,16 @@
+.ScaleSelector {
+    display: flex;
+    flex-direction: column;
+}
+
+.ScaleSelector-sequence {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 320px;
+}
+
+.ScaleSelector-sequence span {
+    width: 30px;
+    padding: 5px 16px 5px 16px;
+}
