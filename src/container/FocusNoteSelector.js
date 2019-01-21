@@ -3,6 +3,8 @@ import React, {Fragment} from 'react'
 
 import {notes} from '../core/Note'
 
+import NoteView from '../presentational/NoteView'
+
 import './FocusNoteSelector.css'
 
 const mapStateToProps = (state) => {
@@ -22,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const KeySelectorComponent = ({focusNote, handleFocusNoteChange}) =>
+const Component = ({focusNote, handleFocusNoteChange}) =>
     <Fragment>
         <div>Focus Note</div>
         <select className="FocusNoteSelector-selector"
@@ -37,6 +39,6 @@ const KeySelectorComponent = ({focusNote, handleFocusNoteChange}) =>
 const FocusNoteSelector = connect(
     mapStateToProps,
     mapDispatchToProps
-)(KeySelectorComponent)
+)(Component)
 
 export default FocusNoteSelector
