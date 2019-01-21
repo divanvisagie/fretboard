@@ -1,5 +1,3 @@
-'use strict'
-
 import Note from './Note'
 import GuitarString from './GuitarString'
 
