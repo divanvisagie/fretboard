@@ -3,46 +3,54 @@
     flex-direction: row;
     width: 100%;
     width: 42px;
+    
 }
 
 .NoteView .note-area {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    width: 100%;
-    min-width: 30px;
+    /* width: 100%; */
+    margin: 2px 0 2px 0;
+    width: 42px;
 }
 
 .NoteView .fret {
     float: right;
     background: #ddd;
-    overflow: hidden;
-    width: 3px;
+    width: 1px;
     height: 100%;;
     margin-right: 0;
-    box-shadow: #444 0px 0px 2px;
 }
 
 .NoteView .string {
-    background: grey;
-    height: 2px;
+    /* background: #bbb;
+    height: 1px;
     width: calc(100% + 3px);
     position: relative;
     top: calc(50% - 1px);
     float: left;
-    z-index: 2;
-    box-shadow: #444 1px 1px 5px;
+    z-index: 2; */
+    height: 1px;
+    width: 25%;
+    border-bottom: 1px solid #bbb;
+    margin-top: 11px;
+    margin-right: -1px;
 }
 
 .NoteView .highlight {
     background: rgb(128, 228, 145) !important;
+    /* border: 1px solid rgb(128, 228, 145) !important; */
+    box-shadow:rgb(128, 228, 145) 0px 0px 2px;
 }
 
 .NoteView .note {
+    cursor: pointer;
     font-size: 10pt;
-    background: white;
+    background: #eee;
     width: 24px;   
     height: 24px;
+    border: 1px solid #aaa;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -50,11 +58,12 @@
     justify-content: center;
     box-sizing: border-box;
     z-index: 3;
-    margin: auto;
-    box-shadow: #444 1px 1px 3px;
+    margin: 0;
+    padding: 0;
+    /* box-shadow: #444 1px 1px 3px; */
 }
 
 .NoteView .note:hover { 
-    background: #ddd;
+    background: #efefef;
     box-shadow: #777 0px 0px 2px;
 }

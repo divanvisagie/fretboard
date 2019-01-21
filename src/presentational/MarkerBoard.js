@@ -29,9 +29,9 @@ class MarkerBoard extends Component {
   drawDot (value) {
       if (this.dots.includes(value)) {
           if (value % 12 === 0) {
-              return <div className="dot">• •</div>
+              return <div className="dot">{value}</div>
           } else {
-              return <div className="dot">•</div>
+              return <div className="dot">{value}</div>
           }
       } else {
           return <div></div>
