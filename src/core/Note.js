@@ -26,7 +26,7 @@ function getNoteRoot (note) {
     return note[0]
 }
 
-function Note (name) {
+export default function Note (name) {
     const FLAT_CHARACTER = '♭'
 
     let sharp = false
@@ -69,9 +69,6 @@ function Note (name) {
     }
 }
 
-export default Note
-
-const notes = noteOrder
 export {
-    notes
+    noteOrder as notes
 }

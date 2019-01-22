@@ -1,20 +1,29 @@
 import React, {Component} from 'react'
 import './NoteView.css'
 
-class NoteView extends Component {
+function getClasses (note, focusNote) {
+    const noteString = note.toString()
+
+    if (noteString === focusNote) {
+        return 'note highlight'
+    }
+    return 'note'
+}
+
+const NoteDisplay = ({note, focusNote, onClick}) => (
+    <div className={getClasses(note, focusNote)}
+        onClick={onClick}>
+        {note.toString()}
+    </div>
+)
+
+export { NoteDisplay }
+
+export default class NoteView extends Component {
     constructor () {
         super()
 
         this.handleClick = this.handleClick.bind(this)
-    }
-
-    getClasses (note, focusNote) {
-        const noteString = note.toString()
-
-        if (noteString === focusNote) {
-            return 'note highlight'
-        }
-        return 'note'
     }
 
     handleClick () {
@@ -22,16 +31,16 @@ class NoteView extends Component {
     }
 
     render () {
+        const { note, focusNote } = this.props
         return (
             <div className='NoteView'>
                 <div className='note-area'>
                     <div className='string'></div>
-                    <div className={this.getClasses(
-                        this.props.note,
-                        this.props.focusNote)}
-                    onClick={this.handleClick}>
-                        {this.props.note.toString()}
-                    </div>
+                    <NoteDisplay
+                        note={note}
+                        focusNote={focusNote}
+                        onClick={this.handleClick}
+                    />
                     <div className='string'></div>
                 </div>
                 <div className='fret'></div>
@@ -39,5 +48,3 @@ class NoteView extends Component {
         )
     }
 }
-
-export default NoteView

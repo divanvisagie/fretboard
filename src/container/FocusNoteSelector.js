@@ -1,9 +1,9 @@
 import {connect} from 'react-redux'
 import React, {Fragment} from 'react'
 
-import {notes} from '../core/Note'
+import Note, {notes} from '../core/Note'
 
-import NoteView from '../presentational/NoteView'
+import {NoteDisplay} from '../presentational/NoteView'
 
 import './FocusNoteSelector.css'
 
@@ -15,25 +15,28 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleFocusNoteChange (event) {
+        handleFocusNoteChange (note) {
             dispatch({
                 type : 'SET_FOCUS_NOTE',
-                value: event.target.value
+                value: note
             })
         }
     }
 }
 
+const noteObjects = notes.map(n => Note(n))
+
 const Component = ({focusNote, handleFocusNoteChange}) =>
     <Fragment>
         <div>Focus Note</div>
-        <select className="FocusNoteSelector-selector"
-            value={focusNote}
-            onChange={handleFocusNoteChange}>
-            {notes.map((x, key) =>
-                <option value={x} key={key}>{x}</option>
+        <div className='FocusNoteSelector-notes'>
+            {noteObjects.map((x, i) =>
+                <NoteDisplay key={i}
+                    focusNote={focusNote}
+                    note={x}
+                    onClick={e => handleFocusNoteChange(x.toString())}/>
             )}
-        </select>
+        </div>
     </Fragment>
 
 const FocusNoteSelector = connect(
