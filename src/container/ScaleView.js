@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {notes} from '../core/Note'
 
 class ScaleSelectorComponent extends Component {
-
     render () {
         const {focusNote, handleFocusNoteChange} = this.props
         return (

@@ -5,24 +5,20 @@ import {Scale} from '../core/Scale'
 function getClasses (note, focusNote, scale) {
     const noteString = note.toString()
 
-    let className = 'note' 
-    
+    let className = 'note'
+
     if (noteString === focusNote) {
         return `${className} highlight`
     }
 
     if (scale && scale) {
         const notes = Scale(focusNote, scale.sequence).noteSequence().map(n => n.toString())
-        console.log(className)
         const isScaleNote = notes.includes(noteString)
 
         if (isScaleNote) {
-            console.log(scale)
             return `${className} highlight-scale-note`
         }
     }
-
-   
 
     return className
 }
