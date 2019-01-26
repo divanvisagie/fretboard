@@ -44,6 +44,10 @@
     box-shadow:rgb(128, 228, 145) 0px 0px 2px;
 }
 
+.highlight-scale-note {
+    background: #aef !important;
+}
+
 .note {
     cursor: pointer;
     font-size: 10pt;

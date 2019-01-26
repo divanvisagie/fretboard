@@ -11,7 +11,7 @@ import GuitarString from '../presentational/GuitarString'
 
 class Fretboard extends Component {
     render () {
-        const {tuning, frets, onNoteClick, focusNote} = this.props
+        const {tuning, frets, onNoteClick, focusNote, scale} = this.props
 
         return (
             <div className="Fretboard">
@@ -19,6 +19,7 @@ class Fretboard extends Component {
                     {reverse(tuning).map((note, i) =>
                         <GuitarString rootNote={note}
                             frets={frets}
+                            scale={scale}
                             onClick={onNoteClick}
                             key={i}
                             focusNote={focusNote} />
@@ -34,7 +35,8 @@ const mapStateToProps = (state) => {
     return {
         tuning   : state.tuning.value,
         frets    : state.frets,
-        focusNote: state.focusNote
+        focusNote: state.focusNote,
+        scale    : state.scale
     }
 }
 const mapDispatchToProps = (dispatch) => {

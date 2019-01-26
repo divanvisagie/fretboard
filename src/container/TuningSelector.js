@@ -6,13 +6,8 @@ const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
     <Fragment>
         <span htmlFor="tuning">Tuning</span>
         <select
-            label="Tuning"
             value={tuning.name}
             onChange={handleTuningChange}
-            inputProps={{
-                name: 'tuning',
-                id  : 'tuning'
-            }}
         >
             {tuningOptions.map((x, key) =>
                 <option value={x} key={key}>{x}</option>

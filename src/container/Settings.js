@@ -6,9 +6,6 @@ const Settings = ({handleFretsChange, frets}) =>
         label="Frets"
         onChange={handleFretsChange}
         value={frets}
-        InputLabelProps={{
-            shrink: true
-        }}
         margin="normal"
         min={27}
         min={12} />

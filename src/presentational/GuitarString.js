@@ -40,13 +40,15 @@ class GuitarString extends Component {
   }
 
   render () {
+      const {onClick, focusNote, rootNote, scale} = this.props
       return (
           <div className="GuitarString">
-              <NutView note={Note(this.props.rootNote)} />
+              <NutView note={Note(rootNote)} />
               {this.state.notes.map((note, index) =>
                   <NoteView note={note}
-                      onClick={this.props.onClick}
-                      focusNote={this.props.focusNote}
+                      onClick={onClick}
+                      scale={scale}
+                      focusNote={focusNote}
                       key={index + note.toString()}/>
               )}
           </div>
