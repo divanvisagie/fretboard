@@ -4,4 +4,4 @@
 
 Fretboard visualizes scales onto a fretboard with different tuning options.
 
-![Promo](./docs/images/promo.png)
+![Promo](./docs/images/promo.gif)
