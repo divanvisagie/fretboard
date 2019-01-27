@@ -11,6 +11,26 @@ const scales = [
     {
         name    : 'Natural Minor',
         sequence: [2, 1, 2, 2, 1, 2, 2]
+    },
+    {
+        name    : 'Major Pentatonic',
+        sequence: [2, 2, 3, 2, 3]
+    },
+    {
+        name    : 'Minor Pentatonic',
+        sequence: [3, 2, 2, 3, 2]
+    },
+    {
+        name    : 'Minor Harmonic',
+        sequence: [2, 1, 2, 2, 1, 3, 1]
+    },
+    {
+        name    : 'Diminished',
+        sequence: [2, 1, 2, 1, 2, 1, 2, 1]
+    },
+    {
+        name    : 'Persian Scale',
+        sequence: [1, 3, 1, 1, 2, 3, 1]
     }
 ]
 
