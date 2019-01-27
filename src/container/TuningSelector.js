@@ -6,7 +6,7 @@ import './TuningSelector.css'
 
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
     <Fragment>
-        <div class="TuningSelector-label">Tuning</div>
+        <div className="TuningSelector-label">Tuning</div>
         <select
             value={tuning.name}
             onChange={handleTuningChange}

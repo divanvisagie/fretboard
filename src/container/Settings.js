@@ -7,7 +7,6 @@ const Settings = ({handleFretsChange, frets}) =>
         onChange={handleFretsChange}
         value={frets}
         margin="normal"
-        min={27}
         min={12} />
 
 const mapStateToProps = (state) => {

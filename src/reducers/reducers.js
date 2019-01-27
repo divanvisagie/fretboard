@@ -19,11 +19,7 @@ function frets (state = loadedFrets, action) {
 function focusNote (state = 'C', action) {
     switch (action.type) {
     case 'SET_FOCUS_NOTE':
-        if (state === action.value) {
-            state = ''
-        } else {
-            state = action.value
-        }
+        state = action.value
         return state
     default:
         return state
@@ -48,11 +44,35 @@ function key (state = '', action) {
     return state
 }
 
+function selectedNotes (state = [], action) {
+    switch (action.type) {
+    case 'SET_SELECTED_NOTE':
+        const {value} = action
+
+        const findExisting = (i) => {
+            return i.note === value.note && i.string === value.string
+        }
+
+        const existingIndex = state.findIndex(findExisting)
+
+        if (existingIndex < 0) {
+            return [...state, value]
+        } else {
+            return state.filter(i => !findExisting(i))
+        }
+    case 'CLEAR_SELECTED_NOTES':
+        return []
+    default:
+        return state
+    }
+}
+
 export default combineReducers({
     focusNote,
     frets,
     key,
     tuningOptions,
     tuning,
-    scale
+    scale,
+    selectedNotes
 })

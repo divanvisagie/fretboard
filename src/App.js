@@ -10,7 +10,6 @@ import Settings from './container/Settings'
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
 import FocusNoteSelector from './container/FocusNoteSelector'
-import ScaleView from './container/ScaleView'
 
 const tuningMap = {
     'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],

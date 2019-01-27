@@ -8,7 +8,6 @@ import 'normalize.css'
 import 'milligram'
 import './index.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
 
 import reducers from './reducers/reducers'
 

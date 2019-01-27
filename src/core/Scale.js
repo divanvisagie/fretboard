@@ -1,5 +1,3 @@
-'use strict'
-
 import Note from './Note'
 import {flatten, reduce} from 'ramda'
 

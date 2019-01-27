@@ -10,8 +10,20 @@ import MarkerBoard from '../presentational/MarkerBoard'
 import GuitarString from '../presentational/GuitarString'
 
 class Fretboard extends Component {
+    clearDisabled () {
+        return this.props.selectedNotes.length < 1
+    }
+
     render () {
-        const {tuning, frets, onNoteClick, focusNote, scale} = this.props
+        const {
+            tuning,
+            frets,
+            onClearClick,
+            onNoteClick,
+            focusNote,
+            scale,
+            selectedNotes
+        } = this.props
 
         return (
             <div className="Fretboard">
@@ -20,12 +32,22 @@ class Fretboard extends Component {
                         <GuitarString rootNote={note}
                             frets={frets}
                             scale={scale}
-                            onClick={onNoteClick}
+                            onClick={n => onNoteClick(n, i)}
                             key={i}
+                            string={i}
+                            selectedNotes={selectedNotes}
                             focusNote={focusNote} />
                     )}
                 </div>
                 <MarkerBoard frets={frets}/>
+                <div className='Fretboard-buttons'>
+                    <button
+                        disabled={this.clearDisabled()}
+                        className='button button-outline'
+                        onClick={onClearClick}>
+                        Clear Selected
+                    </button>
+                </div>
             </div>
         )
     }
@@ -33,18 +55,27 @@ class Fretboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        tuning   : state.tuning.value,
-        frets    : state.frets,
-        focusNote: state.focusNote,
-        scale    : state.scale
+        tuning       : state.tuning.value,
+        frets        : state.frets,
+        focusNote    : state.focusNote,
+        scale        : state.scale,
+        selectedNotes: state.selectedNotes
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onNoteClick (note) {
+        onNoteClick (note, string) {
             dispatch({
-                type : 'SET_FOCUS_NOTE',
-                value: note
+                type : 'SET_SELECTED_NOTE',
+                value: {
+                    note,
+                    string
+                }
+            })
+        },
+        onClearClick () {
+            dispatch({
+                type: 'CLEAR_SELECTED_NOTES'
             })
         }
     }

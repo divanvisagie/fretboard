@@ -48,6 +48,10 @@
     background: #aef !important;
 }
 
+.highlight-selected-note {
+    background: salmon !important;
+}
+
 .note {
     cursor: pointer;
     font-size: 10pt;

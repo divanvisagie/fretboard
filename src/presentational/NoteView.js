@@ -2,10 +2,20 @@ import React, {Component} from 'react'
 import './NoteView.css'
 import {Scale} from '../core/Scale'
 
-function getClasses (note, focusNote, scale) {
+function getClasses (note, focusNote, scale, string, selectedNotes) {
     const noteString = note.toString()
 
     let className = 'note'
+
+    if (string !== undefined && selectedNotes) {
+        const notesOnThisString = selectedNotes.filter(x => {
+            return x.string === string && x.note === note.toString()
+        })
+        if (notesOnThisString.length > 0) {
+
+            return `${className} highlight-selected-note`
+        }
+    }
 
     if (noteString === focusNote) {
         return `${className} highlight`
@@ -23,8 +33,8 @@ function getClasses (note, focusNote, scale) {
     return className
 }
 
-const NoteDisplay = ({note, focusNote, onClick, scale}) => (
-    <div className={getClasses(note, focusNote, scale)}
+const NoteDisplay = ({note, focusNote, onClick, scale, string, selectedNotes}) => (
+    <div className={getClasses(note, focusNote, scale, string, selectedNotes)}
         onClick={onClick}>
         {note.toString()}
     </div>
@@ -44,7 +54,7 @@ export default class NoteView extends Component {
     }
 
     render () {
-        const { note, focusNote, scale } = this.props
+        const { note, focusNote, scale, string, selectedNotes } = this.props
         return (
             <div className='NoteView'>
                 <div className='note-area'>
@@ -53,6 +63,8 @@ export default class NoteView extends Component {
                         note={note}
                         scale={scale}
                         focusNote={focusNote}
+                        string={string}
+                        selectedNotes={selectedNotes}
                         onClick={this.handleClick}
                     />
                     <div className='string'></div>

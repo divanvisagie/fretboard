@@ -2,7 +2,6 @@
 import {connect} from 'react-redux'
 import React, {Fragment, Component} from 'react'
 
-import Note, {notes} from '../core/Note'
 import {scales, Scale} from '../core/Scale'
 
 import './ScaleSelector.css'

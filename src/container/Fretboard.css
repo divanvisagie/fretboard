@@ -8,3 +8,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.Fretboard-buttons {
+    right: 16px;
+    bottom: 17px;
+    padding: 16px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
