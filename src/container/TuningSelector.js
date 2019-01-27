@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 
 import {connect} from 'react-redux'
 
+import './TuningSelector.css'
+
 const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
     <Fragment>
-        <span htmlFor="tuning">Tuning</span>
+        <div class="TuningSelector-label">Tuning</div>
         <select
             value={tuning.name}
             onChange={handleTuningChange}
@@ -12,7 +14,6 @@ const TuningSelector = ({tuning, handleTuningChange, tuningOptions}) =>
             {tuningOptions.map((x, key) =>
                 <option value={x} key={key}>{x}</option>
             )}
-
         </select>
     </Fragment>
 

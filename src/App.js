@@ -6,7 +6,6 @@ import TuningSelector from './container/TuningSelector'
 import ScaleSelector from './container/ScaleSelector'
 
 import Settings from './container/Settings'
-import TuningDisplayConnector from './container/TuningDisplay'
 
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
@@ -47,9 +46,9 @@ class App extends Component {
       return (
           <div className="App">
               <div className="App-toolbar">
-                  <span>
+                  <h3>
                     Fretboard
-                  </span>
+                  </h3>
                   <div className="App-toolbar-menu">
                       <TuningSelector />
                       <Settings />

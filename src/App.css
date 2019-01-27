@@ -23,7 +23,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 6px;
+  padding: 16px 16px 0px 16px;
 }
 
 .App-toolbar-menu {
