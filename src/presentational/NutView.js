@@ -6,7 +6,7 @@ class NutView extends Component {
     render () {
         return (
             <div className='NutView'>
-                {this.props.note.toString()}
+                <span>{this.props.note.toString()}</span>
             </div>
         )
     }
