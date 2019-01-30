@@ -5,5 +5,5 @@
 }
 
 .NutView-highlight-selected-note {
-    color: salmon !important;
+    color: var(--user-selection-color) !important;
 }

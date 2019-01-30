@@ -1,5 +1,25 @@
+:root {
+  --user-selection-color: salmon;
+  --focus-note-color: rgb(128, 228, 145);
+  --scale-highlight-color: #aef;
+  --note-outline-color: #aaa;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+
+.button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline {
+  background-color: transparent;
+  color: var(--user-selection-color);
+  border-color: var(--user-selection-color);
+}
+
+.button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover, button.button-outline[disabled]:focus, button.button-outline[disabled]:hover, input[type='button'].button-outline[disabled]:focus, input[type='button'].button-outline[disabled]:hover, input[type='reset'].button-outline[disabled]:focus, input[type='reset'].button-outline[disabled]:hover, input[type='submit'].button-outline[disabled]:focus, input[type='submit'].button-outline[disabled]:hover {
+  border-color: inherit;
+  border-color: var(--user-selection-color);
+  color: var(--user-selection-color);
 }

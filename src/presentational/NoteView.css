@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* width: 100%; */
     margin: 2px 0 2px 0;
     width: 42px;
 }
@@ -24,13 +23,6 @@
 }
 
 .NoteView .string {
-    /* background: #bbb;
-    height: 1px;
-    width: calc(100% + 3px);
-    position: relative;
-    top: calc(50% - 1px);
-    float: left;
-    z-index: 2; */
     height: 1px;
     width: 25%;
     border-bottom: 1px solid #bbb;
@@ -39,36 +31,32 @@
 }
 
 .highlight {
-    background: rgb(128, 228, 145) !important;
-    /* border: 1px solid rgb(128, 228, 145) !important; */
-    box-shadow:rgb(128, 228, 145) 0px 0px 2px;
+    background: var(--focus-note-color) !important;
+    box-shadow: var(--focus-note-color) 0px 0px 2px;
 }
 
 .highlight-scale-note {
-    background: #aef !important;
+    background: var(--scale-highlight-color) !important;
 }
 
 .highlight-selected-note {
-    background: salmon !important;
+    background: var(--user-selection-color) !important;
 }
 
 .note {
     cursor: pointer;
     font-size: 10pt;
-    background: #eee;
     width: 24px;   
     height: 24px;
-    border: 1px solid #aaa;
+    border: 1px solid var(--note-outline-color);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     box-sizing: border-box;
     z-index: 3;
     margin: 0;
     padding: 0;
-    /* box-shadow: #444 1px 1px 3px; */
 }
 
 .note:hover { 
