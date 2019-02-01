@@ -5,6 +5,7 @@
   "homepage": "http://dvisagie.com/fretboard/",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.2.1",
     "concurrently": "^3.5.1",
     "electron-is-dev": "^0.3.0",
     "global": "^4.3.2",
@@ -16,6 +17,7 @@
     "react-github-fork-ribbon": "^0.5.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
+    "reactstrap": "^7.1.0",
     "redux": "^3.7.2",
     "underscore": "^1.9.1",
     "webpack-dev-server": "^3.1.14"

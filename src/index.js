@@ -5,7 +5,8 @@ import {createStore} from 'redux'
 import ReactGA from 'react-ga'
 
 import 'normalize.css'
-import 'milligram'
+// import 'milligram'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App'
 
