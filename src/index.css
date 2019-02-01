@@ -34,3 +34,26 @@ body {
   font-family: sans-serif;
   background: var(--background);
 }
+
+.dropdown-menu {
+  background: var(--background-secondary);
+}
+
+.dropdown-menu button {
+  color: var(--text) !important;
+}
+
+.dropdown-menu button:hover {
+  background: var(--background-primary) !important;
+}
+
+.dropdown-menu button:active {
+  background: var(--focus-primary) !important;
+  color: var(--background-primary) !important;
+}
+
+input {
+  background: var(--background-primary) !important;
+  color: var(--text) !important;
+}
+
