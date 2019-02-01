@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   overflow-x: hidden;
-  background: #fff;
+  background: var(--background-primary, white);
   height: 100vh;
 }
 
@@ -56,7 +56,7 @@
   justify-content: center;
   margin: auto;
   margin-top: 20px;
-  background: #eee;
+  background: var(--background-secondary, #eee);
   padding-top: 16px;
   padding-bottom: 16px;
 }

@@ -26,7 +26,7 @@ class Fretboard extends Component {
         } = this.props
 
         return (
-            <div className="Fretboard">
+            <div className="Fretboard" className="noselect">
                 <div>
                     {reverse(tuning).map((note, i) =>
                         <GuitarString rootNote={note}

@@ -1,25 +1,50 @@
 :root {
-  --user-selection-color: salmon;
-  --focus-note-color: rgb(128, 228, 145);
-  --scale-highlight-color: #aef;
+  --background-primary: rgb(46,52,63);
+  --background-secondary: rgb(67,76,94);
+  --text: rgb(236,239,234);
+
+  --selection-primary: rgb(191,97,106);
+  --selection-text: rgb(46,52,63);
+
+  --focus-primary: rgb(163, 190, 140);
+  --focus-text: rgb(46,52,63);
+
+  --scale-primary: rgb(136,192,208);
+  --scale-text: rgb(46,52,63);
   --note-outline-color: #aaa;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 body {
   margin: 0;
   padding: 0;
+  color: var(--text);
   font-family: sans-serif;
+  background: var(--background);
 }
 
+select, select, input {
+  color: var(--text);
+  border-color: var(--text-color);
+}
 
 .button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline {
   background-color: transparent;
-  color: var(--user-selection-color);
-  border-color: var(--user-selection-color);
+  color: var(--selection-primary);
+  border-color: var(--selection-primary);
 }
 
 .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover, button.button-outline[disabled]:focus, button.button-outline[disabled]:hover, input[type='button'].button-outline[disabled]:focus, input[type='button'].button-outline[disabled]:hover, input[type='reset'].button-outline[disabled]:focus, input[type='reset'].button-outline[disabled]:hover, input[type='submit'].button-outline[disabled]:focus, input[type='submit'].button-outline[disabled]:hover {
   border-color: inherit;
-  border-color: var(--user-selection-color);
-  color: var(--user-selection-color);
+  border-color: var(--selection-primary);
+  color: var(--selection-primary);
 }

@@ -44,6 +44,10 @@ function key (state = '', action) {
     return state
 }
 
+/**
+ * @param {Array} state
+ * @param {Action} action
+ */
 function selectedNotes (state = [], action) {
     switch (action.type) {
     case 'SET_SELECTED_NOTE':
@@ -52,7 +56,6 @@ function selectedNotes (state = [], action) {
         const findExisting = (i) => {
             return i.note === value.note && i.string === value.string
         }
-
         const existingIndex = state.findIndex(findExisting)
 
         if (existingIndex < 0) {

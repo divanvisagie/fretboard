@@ -12,7 +12,6 @@ function getClasses (note, focusNote, scale, string, selectedNotes) {
             return x.string === string && x.note === note.toString()
         })
         if (notesOnThisString.length > 0) {
-
             return `${className} highlight-selected-note`
         }
     }

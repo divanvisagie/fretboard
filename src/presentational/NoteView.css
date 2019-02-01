@@ -30,17 +30,24 @@
     margin-right: -1px;
 }
 
-.highlight {
-    background: var(--focus-note-color) !important;
-    box-shadow: var(--focus-note-color) 0px 0px 2px;
+.note.highlight {
+    background: var(--focus-primary) !important;
+    box-shadow: var(--focus-primary) 0px 0px 2px;
+    color: var(--focus-text);
 }
 
-.highlight-scale-note {
-    background: var(--scale-highlight-color) !important;
+.note.highlight-scale-note {
+    background: var(--scale-primary) !important;
+    color: var(--scale-text) !important;
 }
 
-.highlight-selected-note {
-    background: var(--user-selection-color) !important;
+.note.highlight-selected-note {
+    background: var(--selection-primary) !important;
+    color: var(--selection-text);
+}
+.note.highlight-selected-note:hover {
+    color: var(--selection-text) !important;
+    box-shadow:var(--selection-primary) 0px 0px 5px;
 }
 
 .note {
@@ -60,6 +67,7 @@
 }
 
 .note:hover { 
-    background: #efefef;
+    background: var(--background-primary);
     box-shadow: #777 0px 0px 2px;
+    color: var(--selection-primary);
 }

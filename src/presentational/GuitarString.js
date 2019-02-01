@@ -45,6 +45,8 @@ class GuitarString extends Component {
           <div className="GuitarString">
               <NutView note={Note(rootNote)}
                   string={string}
+                  focusNote={focusNote}
+                  scale={scale}
                   selectedNotes={selectedNotes}
                   onClick={onClick}/>
               {this.state.notes.map((note, index) =>

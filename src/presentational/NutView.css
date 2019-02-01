@@ -4,6 +4,14 @@
     min-width: 30px;
 }
 
-.NutView-highlight-selected-note {
-    color: var(--user-selection-color) !important;
+.NutView span.highlight-selected-note {
+    color: var(--selection-primary) !important;
+}
+
+.NutView span.highlight-scale-note {
+    color: var(--scale-primary) !important;
+}
+
+.NutView span.highlight {
+    color: var(--focus-primary) !important;
 }
