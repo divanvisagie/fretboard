@@ -17,6 +17,7 @@ class TuningSelector extends Component {
         }
 
         this.dropdownToggle = this.dropdownToggle.bind(this)
+        this.handleTuningOptionClick = this.handleTuningOptionClick.bind(this)
     }
 
     dropdownToggle () {
@@ -25,17 +26,23 @@ class TuningSelector extends Component {
         })
     }
 
+    handleTuningOptionClick (x) {
+        this.props.handleTuningChange(x)
+    }
+
     render () {
         const { tuning, handleTuningChange, tuningOptions } = this.props
         return (<Fragment>
-            <div className="TuningSelector-label">Tuning</div>
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
+            <div className='TuningSelector-label'>Tuning</div>
+            <Dropdown className='TuningSelector-dropdown' isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
                 <DropdownToggle caret>
                     {tuning.name}
                 </DropdownToggle>
                 <DropdownMenu>
                     {tuningOptions.map((x, key) =>
-                        <DropdownItem key={key}>{x}</DropdownItem>
+                        <DropdownItem key={key} onClick={e => this.handleTuningOptionClick(x)}>
+                            {x}
+                        </DropdownItem>
                     )}
                 </DropdownMenu>
             </Dropdown>
@@ -46,15 +53,15 @@ class TuningSelector extends Component {
 const mapStateToProps = (state) => {
     return {
         tuningOptions: state.tuningOptions,
-        tuning: state.tuning
+        tuning       : state.tuning
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleTuningChange(event) {
+        handleTuningChange (name) {
             dispatch({
                 type: 'SET_TUNING',
-                name: event.target.value
+                name
             })
         }
     }

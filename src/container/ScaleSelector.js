@@ -4,9 +4,27 @@ import React, {Fragment, Component} from 'react'
 
 import {scales, Scale} from '../core/Scale'
 
+import { Dropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+
 import './ScaleSelector.css'
 
 class ScaleSelectorComponent extends Component {
+    constructor () {
+        super()
+
+        this.state = {
+            dropdownOpen: false
+        }
+
+        this.dropdownToggle = this.dropdownToggle.bind(this)
+    }
+
+    dropdownToggle () {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        })
+    }
+
     render () {
         const {targetNote, scale, handleScaleChange} = this.props
 
@@ -15,24 +33,28 @@ class ScaleSelectorComponent extends Component {
         return (
             <Fragment>
                 <div>Scale</div>
-                <div className="ScaleSelector-sequence">
+                <div className='ScaleSelector-sequence'>
                     {scale.sequence.map((n, key) =>
                         <span key={key}>{n}</span>
                     )}
                 </div>
-                <div className="ScaleSelector-sequence">
+                <div className='ScaleSelector-sequence'>
                     {noteSequence.map((n, key) =>
                         <span key={key}>{n}</span>
                     )}
                 </div>
-                <select className="ScaleSelector-selector"
-                    value={scale.name}
-                    onChange={event => handleScaleChange(targetNote, event.target.value)}>
-
-                    {scales.map((x, key) =>
-                        <option value={x.name} key={key}>{x.name}</option>
-                    )}
-                </select>
+                <Dropdown className='ScaleSelector-selector' isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
+                    <DropdownToggle caret>
+                        {scale.name}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        {scales.map((x, key) =>
+                            <DropdownItem key={key} onClick={e => handleScaleChange(x)}>
+                                {x.name}
+                            </DropdownItem>
+                        )}
+                    </DropdownMenu>
+                </Dropdown>
             </Fragment>
         )
     }
@@ -46,8 +68,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleScaleChange (focusNote, selected) {
-            const scale = scales.find(s => s.name === selected)
+        handleScaleChange (scale) {
+            //const scale = scales.find(s => s.name === selected)
             dispatch({
                 type : 'SET_SCALE',
                 value: scale

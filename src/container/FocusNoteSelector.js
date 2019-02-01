@@ -29,7 +29,7 @@ const noteObjects = notes.map(n => Note(n))
 const Component = ({focusNote, handleFocusNoteChange}) =>
     <Fragment>
         <div>Focus Note</div>
-        <div className='FocusNoteSelector-notes'>
+        <div className='noselect FocusNoteSelector-notes'>
             {noteObjects.map((x, i) =>
                 <NoteDisplay key={i}
                     focusNote={focusNote}

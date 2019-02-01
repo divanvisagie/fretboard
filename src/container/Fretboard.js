@@ -9,6 +9,8 @@ import MarkerBoard from '../presentational/MarkerBoard'
 
 import GuitarString from '../presentational/GuitarString'
 
+import {Button} from 'reactstrap'
+
 class Fretboard extends Component {
     clearDisabled () {
         return this.props.selectedNotes.length < 1
@@ -41,12 +43,13 @@ class Fretboard extends Component {
                 </div>
                 <MarkerBoard frets={frets}/>
                 <div className='Fretboard-buttons'>
-                    <button
+                    <Button
                         disabled={this.clearDisabled()}
-                        className='button button-outline'
+                        outline
+                        color='danger'
                         onClick={onClearClick}>
                         Clear Selected
-                    </button>
+                    </Button>
                 </div>
             </div>
         )

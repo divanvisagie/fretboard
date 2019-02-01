@@ -1,12 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import {Input} from 'reactstrap'
+
+import './Settings.css'
+
 const Settings = ({handleFretsChange, frets}) =>
-    <input type="number"
-        label="Frets"
+    <Input className='Settings'
+        type='number'
+        label='Frets'
         onChange={handleFretsChange}
         value={frets}
-        margin="normal"
+        margin='normal'
         min={12} />
 
 const mapStateToProps = (state) => {

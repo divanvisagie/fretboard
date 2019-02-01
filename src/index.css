@@ -12,16 +12,19 @@
   --scale-primary: rgb(136,192,208);
   --scale-text: rgb(46,52,63);
   --note-outline-color: #aaa;
+
+  --fret-color: #777;
+  --string-color: #aaa;
 }
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome and Opera */
 }
 
 body {
@@ -30,21 +33,4 @@ body {
   color: var(--text);
   font-family: sans-serif;
   background: var(--background);
-}
-
-select, select, input {
-  color: var(--text);
-  border-color: var(--text-color);
-}
-
-.button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline {
-  background-color: transparent;
-  color: var(--selection-primary);
-  border-color: var(--selection-primary);
-}
-
-.button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover, button.button-outline[disabled]:focus, button.button-outline[disabled]:hover, input[type='button'].button-outline[disabled]:focus, input[type='button'].button-outline[disabled]:hover, input[type='reset'].button-outline[disabled]:focus, input[type='reset'].button-outline[disabled]:hover, input[type='submit'].button-outline[disabled]:focus, input[type='submit'].button-outline[disabled]:hover {
-  border-color: inherit;
-  border-color: var(--selection-primary);
-  color: var(--selection-primary);
 }

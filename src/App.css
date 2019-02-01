@@ -32,10 +32,6 @@
   justify-content: space-between;
 }
 
-.App-toolbar-menu * {
-  margin-left: 16px;
-}
-
 .App-pre-fretboard {
   margin: 20px;
   text-align: left;

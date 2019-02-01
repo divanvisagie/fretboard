@@ -16,7 +16,7 @@
 
 .NoteView .fret {
     float: right;
-    background: #ddd;
+    background: var(--fret-color);
     width: 1px;
     height: 100%;;
     margin-right: 0;
@@ -25,7 +25,7 @@
 .NoteView .string {
     height: 1px;
     width: 25%;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid var(--string-color);
     margin-top: 11px;
     margin-right: -1px;
 }
