@@ -15,11 +15,15 @@
 
 .MarkerBoard .fret {
     width: 42px;
+    max-width: 42px;
+    min-width: 42px;
 }
 
 .MarkerBoard .dot {
     width: 100%;
-    width: 42px;
+    /* width: 42px; */
+    max-width: 42px;
+    min-width: 42px;
     padding-top: 4px;
     /* color: white; */
     /* font-size: 32px; */
