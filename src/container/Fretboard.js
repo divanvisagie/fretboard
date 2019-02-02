@@ -28,7 +28,7 @@ class Fretboard extends Component {
         } = this.props
 
         return (
-            <div className="Fretboard" className="noselect">
+            <div className='Fretboard noselect'>
                 <div>
                     {reverse(tuning).map((note, i) =>
                         <GuitarString rootNote={note}
@@ -42,15 +42,6 @@ class Fretboard extends Component {
                     )}
                 </div>
                 <MarkerBoard frets={frets}/>
-                <div className='Fretboard-buttons'>
-                    <Button
-                        disabled={this.clearDisabled()}
-                        outline
-                        color='danger'
-                        onClick={onClearClick}>
-                        Clear Selected
-                    </Button>
-                </div>
             </div>
         )
     }

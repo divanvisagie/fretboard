@@ -57,6 +57,9 @@
   padding-bottom: 16px;
 }
 
-
-
-
+.App-fretboard-button {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

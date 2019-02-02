@@ -6,8 +6,6 @@ import { Dropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap
 
 import './TuningSelector.css'
 
-let dropdownToggle = true
-
 class TuningSelector extends Component {
     constructor () {
         super()
@@ -31,7 +29,7 @@ class TuningSelector extends Component {
     }
 
     render () {
-        const { tuning, handleTuningChange, tuningOptions } = this.props
+        const { tuning, tuningOptions } = this.props
         return (<Fragment>
             <div className='TuningSelector-label'>Tuning</div>
             <Dropdown className='TuningSelector-dropdown' isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
