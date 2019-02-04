@@ -44,6 +44,14 @@ function key (state = '', action) {
     return state
 }
 
+function scaleNotes (state = [], action) {
+    if (action.type === 'SET_SCALE_NOTES') {
+        state = action.value
+        return state
+    }
+    return state
+}
+
 /**
  * @param {Array} state
  * @param {Action} action
@@ -77,5 +85,6 @@ export default combineReducers({
     tuningOptions,
     tuning,
     scale,
+    scaleNotes,
     selectedNotes
 })

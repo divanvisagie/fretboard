@@ -40,7 +40,7 @@ class GuitarString extends Component {
   }
 
   render () {
-      const {onClick, focusNote, rootNote, scale, string, selectedNotes} = this.props
+      const {onClick, focusNote, rootNote, scale, string, selectedNotes, scaleNotes} = this.props
       return (
           <div className="GuitarString">
               <NutView note={Note(rootNote)}
@@ -54,6 +54,7 @@ class GuitarString extends Component {
                       onClick={onClick}
                       scale={scale}
                       focusNote={focusNote}
+                      scaleNotes={scaleNotes}
                       selectedNotes={selectedNotes}
                       string={string}
                       key={index + note.toString()}/>

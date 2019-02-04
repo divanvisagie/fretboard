@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './NoteView.css'
 import {Scale} from '../core/Scale'
 
-function getClasses (note, focusNote, scale, string, selectedNotes) {
+function getClasses ({note, focusNote, scale, string, selectedNotes, scaleNotes}) {
     const noteString = note.toString()
 
     let className = 'note'
@@ -20,8 +20,8 @@ function getClasses (note, focusNote, scale, string, selectedNotes) {
         return `${className} highlight`
     }
 
-    if (scale && scale) {
-        const notes = Scale(focusNote, scale.sequence).noteSequence().map(n => n.toString())
+    if (scaleNotes) {
+        const notes = scaleNotes
         const isScaleNote = notes.includes(noteString)
 
         if (isScaleNote) {
@@ -32,8 +32,8 @@ function getClasses (note, focusNote, scale, string, selectedNotes) {
     return className
 }
 
-const NoteDisplay = ({note, focusNote, onClick, scale, string, selectedNotes}) => (
-    <div className={getClasses(note, focusNote, scale, string, selectedNotes)}
+const NoteDisplay = ({note, focusNote, onClick, scale, string, selectedNotes, scaleNotes}) => (
+    <div className={getClasses({note, focusNote, scale, string, selectedNotes, scaleNotes})}
         onClick={onClick}>
         {note.toString()}
     </div>
@@ -53,7 +53,7 @@ export default class NoteView extends Component {
     }
 
     render () {
-        const { note, focusNote, scale, string, selectedNotes } = this.props
+        const { note, focusNote, scale, string, selectedNotes, scaleNotes } = this.props
         return (
             <div className='NoteView'>
                 <div className='note-area'>
@@ -62,6 +62,7 @@ export default class NoteView extends Component {
                         note={note}
                         scale={scale}
                         focusNote={focusNote}
+                        scaleNotes={scaleNotes}
                         string={string}
                         selectedNotes={selectedNotes}
                         onClick={this.handleClick}

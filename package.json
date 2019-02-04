@@ -19,6 +19,7 @@
     "react-scripts": "1.0.17",
     "reactstrap": "^7.1.0",
     "redux": "^3.7.2",
+    "redux-saga": "^1.0.1",
     "underscore": "^1.9.1",
     "webpack-dev-server": "^3.1.14"
   },

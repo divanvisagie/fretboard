@@ -21,6 +21,7 @@ class Fretboard extends Component {
             tuning,
             frets,
             onClearClick,
+            scaleNotes,
             onNoteClick,
             focusNote,
             scale,
@@ -37,6 +38,7 @@ class Fretboard extends Component {
                             onClick={n => onNoteClick(n, i)}
                             key={i}
                             string={i}
+                            scaleNotes={scaleNotes}
                             selectedNotes={selectedNotes}
                             focusNote={focusNote} />
                     )}
@@ -53,7 +55,8 @@ const mapStateToProps = (state) => {
         frets        : state.frets,
         focusNote    : state.focusNote,
         scale        : state.scale,
-        selectedNotes: state.selectedNotes
+        selectedNotes: state.selectedNotes,
+        scaleNotes   : state.scaleNotes
     }
 }
 const mapDispatchToProps = (dispatch) => {
