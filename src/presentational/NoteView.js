@@ -50,7 +50,8 @@ class NoteView extends Component {
     }
 
     handleClick () {
-        this.props.onClick(this.props.note.toString())
+        const {note, string} = this.props
+        this.props.onClick(note.toString(), string)
     }
 
     render () {

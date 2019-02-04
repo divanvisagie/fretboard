@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Scale } from '../core/Scale'
+import { connect } from 'react-redux'
 
 import './NutView.css'
 
@@ -41,8 +42,8 @@ class NutView extends Component {
     }
 
     handleClick () {
-        const { note } = this.props
-        this.props.onClick(note.toString())
+        const { note, string } = this.props
+        this.props.onClick(note.toString(), string)
     }
 
     render () {
@@ -64,4 +65,33 @@ class NutView extends Component {
     }
 }
 
-export default NutView
+const mapStateToProps = (state) => {
+    return {
+        tuning       : state.tuning.value,
+        frets        : state.frets,
+        focusNote    : state.focusNote,
+        scale        : state.scale,
+        selectedNotes: state.selectedNotes,
+        scaleNotes   : state.scaleNotes
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick (note, string) {
+            dispatch({
+                type : 'SET_SELECTED_NOTE',
+                value: {
+                    note,
+                    string
+                }
+            })
+        }
+    }
+}
+
+const NoteViewConnector = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NutView)
+
+export default NoteViewConnector
