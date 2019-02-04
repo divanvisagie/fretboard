@@ -4,8 +4,8 @@ import './GuitarString.css'
 import GuitarStringModel from '../core/GuitarString'
 import Note from '../core/Note'
 
-import NoteView from './NoteView'
-import NutView from './NutView'
+import NoteView from '../container/NoteView'
+import NutView from '../container/NutView'
 
 class GuitarString extends Component {
   state = {

@@ -3,7 +3,7 @@ import React, {Fragment} from 'react'
 
 import Note, {notes} from '../core/Note'
 
-import {NoteDisplay} from '../presentational/NoteView'
+import {NoteDisplay} from './NoteView'
 
 import './FocusNoteSelector.css'
 

@@ -2,9 +2,13 @@ import {combineReducers} from 'redux'
 
 import {tuningOptions, tuning} from './tuning'
 
-import {scales} from '../core/Scale'
+import Scale, {scales} from '../core/Scale'
 
 const loadedFrets = parseInt(localStorage.getItem('frets'), 10) || 24
+const [firstScale] = scales
+const focusNoteState = 'C'
+const scaleNotesState = Scale(focusNoteState, firstScale.sequence).noteSequence().map(n => n.toString())
+
 function frets (state = loadedFrets, action) {
     switch (action.type) {
     case 'SET_FRETS':
@@ -16,7 +20,7 @@ function frets (state = loadedFrets, action) {
     }
 }
 
-function focusNote (state = 'C', action) {
+function focusNote (state = focusNoteState, action) {
     switch (action.type) {
     case 'SET_FOCUS_NOTE':
         state = action.value
@@ -26,8 +30,7 @@ function focusNote (state = 'C', action) {
     }
 }
 
-const [first] = scales
-function scale (state = first, action) {
+function scale (state = firstScale, action) {
     switch (action.type) {
     case 'SET_SCALE':
         state = action.value
@@ -44,7 +47,7 @@ function key (state = '', action) {
     return state
 }
 
-function scaleNotes (state = [], action) {
+function scaleNotes (state = scaleNotesState, action) {
     if (action.type === 'SET_SCALE_NOTES') {
         state = action.value
         return state
