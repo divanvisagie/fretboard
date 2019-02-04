@@ -8,7 +8,8 @@
 .MarkerBoard .nut {
     width: 100%;
     /* background: rgba(255, 255, 255, 0.897); */
-    max-width: 38px;
+    max-width: 30px;
+    min-width: 30px;
     /* box-shadow: #444 1px 1px 5px; */
     width: 30px;
 }

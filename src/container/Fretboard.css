@@ -3,10 +3,13 @@
     /* max-width: calc(100% - 40px); */
     /* box-shadow: rgba(0, 0, 0, 0.288) 5px 5px 7px; */
 
-    overflow-x: auto;
+    /* overflow-x: auto; */
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    padding: 20px 16px 20px 16px;
+    box-sizing: border-box;
+
     -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
 }
 
@@ -17,4 +20,18 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+
+.Fretboard::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.Fretboard::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.Fretboard::-webkit-scrollbar-thumb {
+  background-color: rgb(40, 46, 56);
+  outline: 1px solid slategrey;
 }
