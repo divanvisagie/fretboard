@@ -51,11 +51,6 @@ class GuitarString extends Component {
                   onClick={onClick}/>
               {this.state.notes.map((note, index) =>
                   <NoteView note={note}
-                      onClick={onClick}
-                      scale={scale}
-                      focusNote={focusNote}
-                      scaleNotes={scaleNotes}
-                      selectedNotes={selectedNotes}
                       string={string}
                       key={index + note.toString()}/>
               )}

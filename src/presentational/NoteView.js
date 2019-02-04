@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './NoteView.css'
+import {connect} from 'react-redux'
 import {Scale} from '../core/Scale'
 
 function getClasses ({note, focusNote, scale, string, selectedNotes, scaleNotes}) {
@@ -41,7 +42,7 @@ const NoteDisplay = ({note, focusNote, onClick, scale, string, selectedNotes, sc
 
 export { NoteDisplay }
 
-export default class NoteView extends Component {
+class NoteView extends Component {
     constructor () {
         super()
 
@@ -74,3 +75,34 @@ export default class NoteView extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        tuning       : state.tuning.value,
+        frets        : state.frets,
+        focusNote    : state.focusNote,
+        scale        : state.scale,
+        selectedNotes: state.selectedNotes,
+        scaleNotes   : state.scaleNotes
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick (note, string) {
+            dispatch({
+                type : 'SET_SELECTED_NOTE',
+                value: {
+                    note,
+                    string
+                }
+            })
+        }
+    }
+}
+
+const NoteViewConnector = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NoteView)
+
+export default NoteViewConnector
