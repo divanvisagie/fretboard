@@ -1,25 +1,14 @@
 import React, {Component} from 'react'
 
+import { connect } from 'react-redux'
+
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
 
-export default class AddTuningModal extends Component {
-    constructor () {
-        super()
-        this.state = {
-            modalOpen: false
-        }
-        this.modalToggle = this.modalToggle.bind(this)
-    }
-
-    modalToggle () {
-        this.setState({
-            modalOpen: !this.state.modalOpen
-        })
-    }
-
+class TuningModal extends Component {
     render () {
+        const { modalOpen, modalToggle } = this.props
         return (
-            <Modal isOpen={this.state.modalOpen} toggle={this.modalToggle}>
+            <Modal isOpen={modalOpen} toggle={modalToggle}>
                 <ModalHeader>
                     Add new Tuning
                 </ModalHeader>
@@ -27,10 +16,33 @@ export default class AddTuningModal extends Component {
                     This is a modal
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={e => this.setState({ modalOpen: false })}>Close</Button>
+                    <Button onClick={modalToggle}>Close</Button>
                     <Button color='info'>Add</Button>
                 </ModalFooter>
             </Modal>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        modalOpen: state.tuningModalOpen
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        modalToggle () {
+            dispatch({
+                type: 'TOGGLE_TUNING_MODAL_OPEN'
+            })
+        }
+    }
+}
+
+const AddTuningModal = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TuningModal)
+
+export default AddTuningModal
