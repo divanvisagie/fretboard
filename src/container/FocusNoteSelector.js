@@ -1,11 +1,10 @@
-import {connect} from 'react-redux'
-import React, {Fragment} from 'react'
+import { connect } from 'react-redux'
+import React, { Fragment } from 'react'
 
-import Note, {notes} from '../core/Note'
-
-import {NoteDisplay} from './NoteView'
+import Note, { notes } from '../core/Note'
 
 import './FocusNoteSelector.css'
+import { NoteSelector } from '../presentational/NoteSelector'
 
 const mapStateToProps = (state) => {
     return {
@@ -24,17 +23,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const noteObjects = notes.map(n => Note(n))
-
-export const NoteSelector = ({focusNote, handleNoteSelected}) =>
-    <div className='noselect FocusNoteSelector-notes'>
-        {noteObjects.map((x, i) =>
-            <NoteDisplay key={i}
-                focusNote={focusNote}
-                note={x}
-                onClick={e => handleNoteSelected(x.toString())}/>
-        )}
-    </div>
+export const noteObjects = notes.map(n => Note(n))
 
 const Component = ({focusNote, handleNoteSelected}) =>
     <Fragment>
