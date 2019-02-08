@@ -3,6 +3,20 @@ import React, {Component} from 'react'
 import './MarkerBoard.css'
 import PropTypes from 'prop-types'
 
+function getMarker (index) {
+    if (index === 0) return ''
+
+    const sub = Math.floor(index / 12) * 12
+    const subIndex = index - sub
+
+    if (subIndex === 0) return index
+    const singles = [3, 5, 7, 9]
+
+    const isSingle = singles.some(x => subIndex / x === 1)
+    if (isSingle) return index.toString()
+    return ''
+}
+
 class MarkerBoard extends Component {
   state = {
       range: []
@@ -51,7 +65,7 @@ class MarkerBoard extends Component {
 
               {this.state.range.map((x, i) =>
                   <div className="fret" key={i}>
-                      {this.drawDot(x)}
+                      {getMarker(i + 1)}
                   </div>
               )}
           </div>
