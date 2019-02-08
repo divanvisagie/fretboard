@@ -1,14 +1,37 @@
-const tuningMap = {
-    'Standard E'           : ['E', 'A', 'D', 'G', 'B', 'E'],
-    'Standard C'           : ['C', 'F', 'A#', 'D#', 'G', 'C'],
-    'Standard D'           : ['D', 'G', 'C', 'F', 'A', 'D'],
-    'Drop C'               : ['C', 'G', 'C', 'F', 'A', 'D'],
-    'Standard B (7 String)': ['B', 'E', 'A', 'D', 'G', 'B', 'E'],
-    'Bass E'               : ['E', 'A', 'D', 'G']
-}
+const tunings = [
+    { 
+        name : 'Standard E',           
+        value: ['E', 'A', 'D', 'G', 'B', 'E']
+    },
+    {
+        name : 'Standard C',
+        value: ['C', 'F', 'A#', 'D#', 'G', 'C']
+    },
+    {
+        name : 'Standard D',
+        value: ['D', 'G', 'C', 'F', 'A', 'D'],
+    },
+    {
+        name : 'Drop C',
+        value: ['C', 'G', 'C', 'F', 'A', 'D']
+    },
+    {
+        name : 'Standard B (7 String)',
+        value: ['B', 'E', 'A', 'D', 'G', 'B', 'E']
+    },
+    {
+        name : 'Bass E',
+        value: ['E', 'A', 'D', 'G']
+    }
+]
 
-function tuningOptions () {
-    return Object.keys(tuningMap)
+function tuningOptions (state = tunings, action) {
+    switch (action.type) {
+    // case 'ADD_TUNING':
+    //     state.
+    default:
+        return state
+    }
 }
 
 const tuningDefault = {
@@ -18,10 +41,7 @@ const tuningDefault = {
 function tuning (state = tuningDefault, action) {
     switch (action.type) {
     case 'SET_TUNING':
-        state = {
-            name : action.name,
-            value: tuningMap[action.name]
-        }
+        state = action.value
         return state
     default:
         return state

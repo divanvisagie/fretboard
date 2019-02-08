@@ -2,7 +2,9 @@ import React, { Fragment, Component } from 'react'
 
 import { connect } from 'react-redux'
 
-import { Dropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+import { DropdownMenu, DropdownItem, DropdownToggle, ButtonGroup, Button, ButtonDropdown } from 'reactstrap'
+
+import AddTuningModal from './AddTuningModal'
 
 import './TuningSelector.css'
 
@@ -31,19 +33,22 @@ class TuningSelector extends Component {
     render () {
         const { tuning, tuningOptions } = this.props
         return (<Fragment>
-            <div className='TuningSelector-label'>Tuning</div>
-            <Dropdown className='TuningSelector-dropdown' isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
-                <DropdownToggle caret>
-                    {tuning.name}
-                </DropdownToggle>
-                <DropdownMenu>
-                    {tuningOptions.map((x, key) =>
-                        <DropdownItem key={key} onClick={e => this.handleTuningOptionClick(x)}>
-                            {x}
-                        </DropdownItem>
-                    )}
-                </DropdownMenu>
-            </Dropdown>
+            <ButtonGroup className='TuningSelector-dropdown'>
+                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
+                    <DropdownToggle caret>
+                        {tuning.name}
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        {tuningOptions.map((x, key) =>
+                            <DropdownItem key={key} onClick={e => this.handleTuningOptionClick(x)}>
+                                {x.name}
+                            </DropdownItem>
+                        )}
+                    </DropdownMenu>
+                </ButtonDropdown>
+                {/* <Button color='info' onClick={this.modalToggle}>Add</Button> */}
+            </ButtonGroup>
+            <AddTuningModal/>
         </Fragment>)
     }
 }
@@ -56,10 +61,10 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleTuningChange (name) {
+        handleTuningChange (tuning) {
             dispatch({
-                type: 'SET_TUNING',
-                name
+                type : 'SET_TUNING',
+                value: tuning
             })
         }
     }

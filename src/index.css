@@ -61,6 +61,18 @@ body {
   color: var(--background-primary) !important;
 }
 
+.modal-content {
+  background: var(--background-primary);
+}
+
+.modal-header {
+  border-bottom-color: var(--background-secondary);
+}
+
+.modal-footer {
+  border-top-color: var(--background-secondary);
+}
+
 input {
   background: var(--background-primary) !important;
   color: var(--text) !important;
