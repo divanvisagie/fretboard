@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 
-import {tuningOptions, tuning} from './tuning'
+import {tuningOptions, tuning, tuningModalOpen} from './tuning'
 import selectedNotes from './selectedNotes'
 
 import Scale, {scales} from '../core/Scale'
@@ -62,6 +62,7 @@ export default combineReducers({
     key,
     tuningOptions,
     tuning,
+    tuningModalOpen,
     scale,
     scaleNotes,
     selectedNotes

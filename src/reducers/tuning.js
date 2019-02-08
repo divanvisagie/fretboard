@@ -1,6 +1,6 @@
 const tunings = [
-    { 
-        name : 'Standard E',           
+    {
+        name : 'Standard E',
         value: ['E', 'A', 'D', 'G', 'B', 'E']
     },
     {
@@ -9,7 +9,7 @@ const tunings = [
     },
     {
         name : 'Standard D',
-        value: ['D', 'G', 'C', 'F', 'A', 'D'],
+        value: ['D', 'G', 'C', 'F', 'A', 'D']
     },
     {
         name : 'Drop C',
@@ -38,6 +38,7 @@ const tuningDefault = {
     name : 'Standard E',
     value: ['E', 'A', 'D', 'G', 'B', 'G']
 }
+
 function tuning (state = tuningDefault, action) {
     switch (action.type) {
     case 'SET_TUNING':
@@ -48,7 +49,21 @@ function tuning (state = tuningDefault, action) {
     }
 }
 
+function tuningModalOpen (state = false, action) {
+    switch (action.type) {
+    case 'TOGGLE_TUNING_MODAL_OPEN':
+        state = !state
+        return state
+    case 'SET_TUNING_MODAL_OPEN':
+        state = action.value
+        return state
+    default:
+        return state
+    }
+}
+
 export {
     tuningOptions,
+    tuningModalOpen,
     tuning
 }

@@ -31,7 +31,7 @@ class TuningSelector extends Component {
     }
 
     render () {
-        const { tuning, tuningOptions } = this.props
+        const { tuning, tuningOptions, handleTuningAddClick } = this.props
         return (<Fragment>
             <ButtonGroup className='TuningSelector-dropdown'>
                 <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
@@ -46,7 +46,7 @@ class TuningSelector extends Component {
                         )}
                     </DropdownMenu>
                 </ButtonDropdown>
-                {/* <Button color='info' onClick={this.modalToggle}>Add</Button> */}
+                <Button color='info' onClick={handleTuningAddClick}>Add</Button>
             </ButtonGroup>
             <AddTuningModal/>
         </Fragment>)
@@ -65,6 +65,12 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type : 'SET_TUNING',
                 value: tuning
+            })
+        },
+        handleTuningAddClick () {
+            dispatch({
+                type : 'SET_TUNING_MODAL_OPEN',
+                value: true
             })
         }
     }
