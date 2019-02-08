@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import { connect } from 'react-redux'
 
 import { NoteSelector } from './FocusNoteSelector'
 
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
+const initialValueState = ['A']
 
 const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
-    const initialValueState = ['A']
-
     const [name, setName] = useState('')
     const [values, setValues] = useState(initialValueState)
+    const [dirty, setDirty] = useState(false)
+
+    const cleanup = () => {
+        setDirty(false)
+        setName('')
+        setValues(initialValueState)
+    }
 
     const addString = () => {
         setValues([...values, 'C'])
@@ -20,16 +26,30 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
         let v = [...values]
         v[string] = note
         setValues(v)
+        setDirty(true)
+    }
+
+    const handleNameChange = (name) => {
+        setName(name)
+        setDirty(true)
     }
 
     const save = () => {
-        setValues(initialValueState)
-        setName('')
         toggleModal()
         addTuning({
             name,
             value: values
         })
+        cleanup()
+    }
+
+    const cancel = () => {
+        cleanup()
+        toggleModal()
+    }
+
+    const inputInvalid = () => {
+        return name.length < 1 && dirty
     }
 
     return (
@@ -39,8 +59,9 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
             </ModalHeader>
             <ModalBody>
                 <Input value={name}
+                    invalid={inputInvalid()}
                     placeholder='Name'
-                    onChange={e => setName(e.target.value)}/>
+                    onChange={e => handleNameChange(e.target.value)}/>
                 {values.map((x, i) => <div key={i}>
                     String: {i + 1} <NoteSelector
                         handleNoteSelected={n => handleNoteClick(n, i)}
@@ -49,8 +70,12 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                 <Button onClick={addString}>+</Button>
             </ModalBody>
             <ModalFooter>
-                <Button onClick={toggleModal}>Close</Button>
-                <Button color='info' onClick={save}>Add</Button>
+                <Button onClick={cancel}>Cancel</Button>
+                <Button color='info'
+                    disabled={name.length < 1}
+                    onClick={save}>
+                    Add
+                </Button>
             </ModalFooter>
         </Modal>
     )
