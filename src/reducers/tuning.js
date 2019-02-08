@@ -25,21 +25,12 @@ const tunings = [
     }
 ]
 
-function tuningOptions (state = tunings, action) {
-    switch (action.type) {
-    case 'ADD_TUNING':
-        return [...state, action.value]
-    default:
-        return state
-    }
-}
-
 const tuningDefault = {
     name : 'Standard E',
     value: ['E', 'A', 'D', 'G', 'B', 'G']
 }
 
-function tuning (state = tuningDefault, action) {
+export function tuning (state = tuningDefault, action) {
     switch (action.type) {
     case 'SET_TUNING':
         state = action.value
@@ -49,7 +40,7 @@ function tuning (state = tuningDefault, action) {
     }
 }
 
-function tuningModalOpen (state = false, action) {
+export function tuningModalOpen (state = false, action) {
     switch (action.type) {
     case 'TOGGLE_TUNING_MODAL_OPEN':
         state = !state
@@ -62,8 +53,11 @@ function tuningModalOpen (state = false, action) {
     }
 }
 
-export {
-    tuningOptions,
-    tuningModalOpen,
-    tuning
+export function tuningOptions (state = tunings, action) {
+    switch (action.type) {
+    case 'ADD_TUNING':
+        return [...state, action.value]
+    default:
+        return state
+    }
 }

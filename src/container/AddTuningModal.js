@@ -2,9 +2,12 @@ import React, {useState} from 'react'
 
 import { connect } from 'react-redux'
 
-import { NoteSelector } from './FocusNoteSelector'
+import NoteSelector from '../presentational/NoteSelector'
 
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
+
+import './AddTuningModal.css'
+
 const initialValueState = ['A']
 
 const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
@@ -62,8 +65,8 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                     invalid={inputInvalid()}
                     placeholder='Name'
                     onChange={e => handleNameChange(e.target.value)}/>
-                {values.map((x, i) => <div key={i}>
-                    String: {i + 1} <NoteSelector
+                {values.map((x, i) => <div className='AddTuningModal-string' key={i}>
+                        <span>String: {i + 1}</span> <NoteSelector
                         handleNoteSelected={n => handleNoteClick(n, i)}
                         focusNote={x} />
                 </div>)}

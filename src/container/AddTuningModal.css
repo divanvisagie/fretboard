@@ -1,0 +1,9 @@
+.AddTuningModal-string {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 0 16px 0;
+}
+
+.AddTuningModal-string span {
+    padding: 0 16px 0 0
+}

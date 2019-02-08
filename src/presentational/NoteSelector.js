@@ -1,7 +1,11 @@
-import { NoteDisplay } from '../container/NoteView'
-import { noteObjects } from '../container/FocusNoteSelector'
+import React from 'react'
 
-export const NoteSelector = ({ focusNote, handleNoteSelected }) =>
+import { NoteDisplay } from '../container/NoteView'
+import Note, { notes } from '../core/Note'
+
+const noteObjects = notes.map(n => Note(n))
+
+const NoteSelector = ({ focusNote, handleNoteSelected }) =>
     <div className='noselect FocusNoteSelector-notes'>
         {noteObjects.map((x, i) =>
             <NoteDisplay
@@ -11,3 +15,5 @@ export const NoteSelector = ({ focusNote, handleNoteSelected }) =>
                 onClick={e => handleNoteSelected(x.toString())} />
         )}
     </div>
+
+export default NoteSelector

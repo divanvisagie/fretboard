@@ -1,10 +1,8 @@
 import { connect } from 'react-redux'
 import React, { Fragment } from 'react'
 
-import Note, { notes } from '../core/Note'
-
 import './FocusNoteSelector.css'
-import { NoteSelector } from '../presentational/NoteSelector'
+import NoteSelector from '../presentational/NoteSelector'
 
 const mapStateToProps = (state) => {
     return {
@@ -22,8 +20,6 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
-export const noteObjects = notes.map(n => Note(n))
 
 const Component = ({focusNote, handleNoteSelected}) =>
     <Fragment>

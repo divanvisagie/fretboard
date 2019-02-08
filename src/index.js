@@ -4,8 +4,6 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux'
 import ReactGA from 'react-ga'
 
-import 'normalize.css'
-// import 'milligram'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App'
