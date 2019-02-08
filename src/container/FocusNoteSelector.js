@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleFocusNoteChange (note) {
+        handleNoteSelected (note) {
             dispatch({
                 type : 'SET_FOCUS_NOTE',
                 value: note
@@ -26,17 +26,20 @@ const mapDispatchToProps = (dispatch) => {
 
 const noteObjects = notes.map(n => Note(n))
 
-const Component = ({focusNote, handleFocusNoteChange}) =>
+export const NoteSelector = ({focusNote, handleNoteSelected}) =>
+    <div className='noselect FocusNoteSelector-notes'>
+        {noteObjects.map((x, i) =>
+            <NoteDisplay key={i}
+                focusNote={focusNote}
+                note={x}
+                onClick={e => handleNoteSelected(x.toString())}/>
+        )}
+    </div>
+
+const Component = ({focusNote, handleNoteSelected}) =>
     <Fragment>
         <div>Focus Note</div>
-        <div className='noselect FocusNoteSelector-notes'>
-            {noteObjects.map((x, i) =>
-                <NoteDisplay key={i}
-                    focusNote={focusNote}
-                    note={x}
-                    onClick={e => handleFocusNoteChange(x.toString())}/>
-            )}
-        </div>
+        <NoteSelector focusNote={focusNote} handleNoteSelected={handleNoteSelected} />
     </Fragment>
 
 const FocusNoteSelector = connect(

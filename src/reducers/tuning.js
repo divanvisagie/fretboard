@@ -27,8 +27,8 @@ const tunings = [
 
 function tuningOptions (state = tunings, action) {
     switch (action.type) {
-    // case 'ADD_TUNING':
-    //     state.
+    case 'ADD_TUNING':
+        return [...state, action.value]
     default:
         return state
     }

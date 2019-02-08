@@ -2,22 +2,34 @@ import React, {useState} from 'react'
 
 import { connect } from 'react-redux'
 
+import { NoteSelector } from './FocusNoteSelector'
+
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
 
-const TuningModal = ({ modalOpen, toggleModal }) => {
-    const initialValueState = ['E']
+const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
+    const initialValueState = ['A']
 
-    const [name, setName] = useState()
+    const [name, setName] = useState('')
     const [values, setValues] = useState(initialValueState)
 
     const addString = () => {
         setValues([...values, 'C'])
     }
 
+    const handleNoteClick = (note, string) => {
+        let v = [...values]
+        v[string] = note
+        setValues(v)
+    }
+
     const save = () => {
         setValues(initialValueState)
         setName('')
         toggleModal()
+        addTuning({
+            name,
+            value: values
+        })
     }
 
     return (
@@ -29,8 +41,10 @@ const TuningModal = ({ modalOpen, toggleModal }) => {
                 <Input value={name}
                     placeholder='Name'
                     onChange={e => setName(e.target.value)}/>
-                {values.map((x, i) => <div>
-                    String: {i + 1} <Input key={i} value={x} />
+                {values.map((x, i) => <div key={i}>
+                    String: {i + 1} <NoteSelector
+                        handleNoteSelected={n => handleNoteClick(n, i)}
+                        focusNote={x} />
                 </div>)}
                 <Button onClick={addString}>+</Button>
             </ModalBody>
@@ -53,6 +67,12 @@ const mapDispatchToProps = (dispatch) => {
         toggleModal () {
             dispatch({
                 type: 'TOGGLE_TUNING_MODAL_OPEN'
+            })
+        },
+        addTuning (value) {
+            dispatch({
+                type: 'ADD_TUNING',
+                value
             })
         }
     }
