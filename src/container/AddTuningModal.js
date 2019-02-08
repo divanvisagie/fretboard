@@ -1,27 +1,45 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 
 import { connect } from 'react-redux'
 
-import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap'
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
 
-class TuningModal extends Component {
-    render () {
-        const { modalOpen, modalToggle } = this.props
-        return (
-            <Modal isOpen={modalOpen} toggle={modalToggle}>
-                <ModalHeader>
-                    Add new Tuning
-                </ModalHeader>
-                <ModalBody>
-                    This is a modal
-                </ModalBody>
-                <ModalFooter>
-                    <Button onClick={modalToggle}>Close</Button>
-                    <Button color='info'>Add</Button>
-                </ModalFooter>
-            </Modal>
-        )
+const TuningModal = ({ modalOpen, toggleModal }) => {
+    const initialValueState = ['E']
+
+    const [name, setName] = useState()
+    const [values, setValues] = useState(initialValueState)
+
+    const addString = () => {
+        setValues([...values, 'C'])
     }
+
+    const save = () => {
+        setValues(initialValueState)
+        setName('')
+        toggleModal()
+    }
+
+    return (
+        <Modal isOpen={modalOpen} toggle={toggleModal}>
+            <ModalHeader>
+                Add new Tuning
+            </ModalHeader>
+            <ModalBody>
+                <Input value={name}
+                    placeholder='Name'
+                    onChange={e => setName(e.target.value)}/>
+                {values.map((x, i) => <div>
+                    String: {i + 1} <Input key={i} value={x} />
+                </div>)}
+                <Button onClick={addString}>+</Button>
+            </ModalBody>
+            <ModalFooter>
+                <Button onClick={toggleModal}>Close</Button>
+                <Button color='info' onClick={save}>Add</Button>
+            </ModalFooter>
+        </Modal>
+    )
 }
 
 const mapStateToProps = (state) => {
@@ -32,7 +50,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        modalToggle () {
+        toggleModal () {
             dispatch({
                 type: 'TOGGLE_TUNING_MODAL_OPEN'
             })

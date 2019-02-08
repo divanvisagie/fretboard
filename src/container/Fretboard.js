@@ -9,8 +9,6 @@ import MarkerBoard from '../presentational/MarkerBoard'
 
 import GuitarString from '../presentational/GuitarString'
 
-import {Button} from 'reactstrap'
-
 class Fretboard extends Component {
     clearDisabled () {
         return this.props.selectedNotes.length < 1
@@ -20,7 +18,6 @@ class Fretboard extends Component {
         const {
             tuning,
             frets,
-            onClearClick,
             scaleNotes,
             onNoteClick,
             focusNote,
@@ -68,11 +65,6 @@ const mapDispatchToProps = (dispatch) => {
                     note,
                     string
                 }
-            })
-        },
-        onClearClick () {
-            dispatch({
-                type: 'CLEAR_SELECTED_NOTES'
             })
         }
     }

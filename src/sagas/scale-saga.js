@@ -1,4 +1,4 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects'
+import {put, takeLatest, select} from 'redux-saga/effects'
 import {Scale} from '../core/Scale'
 
 const getFocusNote = (state) => state.focusNote

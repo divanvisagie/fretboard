@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import './NoteView.css'
 import {connect} from 'react-redux'
-import {Scale} from '../core/Scale'
 
-function getClasses ({note, focusNote, scale, string, selectedNotes, scaleNotes}) {
+function getClasses ({note, focusNote, string, selectedNotes, scaleNotes}) {
     const noteString = note.toString()
 
     let className = 'note'
