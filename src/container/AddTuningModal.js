@@ -121,7 +121,7 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                             value: { note, string: string }
                         })}
                         focusNote={x} />
-                    <Delete class='delete'
+                    <Delete className='delete'
                         onClick={() => dispatch({
                             type : 'REMOVE_STRING',
                             value: string
