@@ -4,7 +4,7 @@ import Note from './Note'
 
 describe('when creating a new note object', () => {
     describe('when creating the note C', () => {
-        const note = Note('C')
+        const note = new Note('C')
 
         it('should have a toString value of C', () => {
             const name = note.toString()
@@ -25,7 +25,7 @@ describe('when creating a new note object', () => {
     })
 
     describe('when creating the note C#', () => {
-        const note = Note('C').sharpen()
+        const note = new Note('C').sharpen()
 
         it('should have a toString value of C#', () => {
             const name = note.toString()
@@ -43,7 +43,7 @@ describe('when creating a new note object', () => {
     })
 
     describe('when creating the note G#', () => {
-        const note = Note('G').sharpen()
+        const note = new Note('G').sharpen()
         it('should have a toString value of G#', () => {
             const name = note.toString()
             expect(name).toBe('G#')

@@ -35,7 +35,7 @@ const scales = [
 function Scale (note, sequence) {
     return {
         noteSequence () {
-            const startNote = Note(note)
+            const startNote = new Note(note)
 
             const reductionTarget = {
                 seq         : [],

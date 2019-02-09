@@ -21,13 +21,13 @@
     "react-feather": "^1.1.6",
     "react-ga": "^2.4.1",
     "react-redux": "^5.0.6",
-    "react-scripts": "2.1.0",
+    "react-scripts": "^2.1.3",
     "reactstrap": "^7.1.0",
     "redux": "^3.7.2",
     "redux-saga": "^1.0.1",
     "typescript": "^3.3.3",
     "underscore": "^1.9.1",
-    "webpack-dev-server": "3.1.9"
+    "webpack-dev-server": "3.1.14"
   },
   "main": "public/electron.js",
   "scripts": {

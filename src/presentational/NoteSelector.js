@@ -3,7 +3,7 @@ import React from 'react'
 import { NoteDisplay } from '../container/NoteView'
 import Note, { notes } from '../core/Note'
 
-const noteObjects = notes.map(n => Note(n))
+const noteObjects = notes.map(n => new Note(n))
 
 const NoteSelector = ({ focusNote, handleNoteSelected }) =>
     <div className='noselect FocusNoteSelector-notes'>

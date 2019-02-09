@@ -1,7 +1,7 @@
 import Note from './Note'
 
 function GuitarString (root, length) {
-    const rootNote = Note(root)
+    const rootNote = new Note(root)
     return {
         root () {
             return root
