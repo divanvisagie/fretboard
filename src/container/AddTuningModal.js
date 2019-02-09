@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useReducer} from 'react'
 
 import { connect } from 'react-redux'
 
@@ -8,51 +8,80 @@ import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'react
 
 import './AddTuningModal.css'
 
-const initialValueState = ['A']
+const initialState = {
+    values: ['A'],
+    name  : '',
+    dirty : false
+}
+
+const updateSelectedNoteInState = (state, newValue) => {
+    const {note, string} = newValue
+    const {name} = state
+    let values = [...state.values]
+    values[string] = note
+    return {
+        dirty: true,
+        values,
+        name
+    }
+}
+
+const updateNameInState = (state, newValue) => {
+    const {values} = state
+    return {
+        values,
+        dirty: true,
+        name : newValue
+    }
+}
+
+const addString = (state) => {
+    const {values, name} = state
+    return {
+        dirty : true,
+        name,
+        values: [...values, 'A']
+    }
+}
+
+const tuningReducer = (state = initialState, action) => {
+    switch (action.type) {
+    case 'SELECT_NOTE_AT_STRING':
+        return updateSelectedNoteInState(state, action.value)
+    case 'UPDATE_NAME':
+        return updateNameInState(state, action.value)
+    case 'RESET':
+        return initialState
+    case 'ADD_STRING':
+        return addString(state)
+    default:
+        return state
+    }
+}
 
 const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
-    const [name, setName] = useState('')
-    const [values, setValues] = useState(initialValueState)
-    const [dirty, setDirty] = useState(false)
-
-    const cleanup = () => {
-        setDirty(false)
-        setName('')
-        setValues(initialValueState)
-    }
-
-    const addString = () => {
-        setValues([...values, 'C'])
-    }
-
-    const handleNoteClick = (note, string) => {
-        let v = [...values]
-        v[string] = note
-        setValues(v)
-        setDirty(true)
-    }
-
-    const handleNameChange = (name) => {
-        setName(name)
-        setDirty(true)
-    }
+    const [state, dispatch] = useReducer(tuningReducer, initialState)
 
     const save = () => {
         toggleModal()
         addTuning({
-            name,
-            value: values
+            name : state.name,
+            value: state.values
         })
-        cleanup()
+        dispatch({
+            type: 'RESET'
+        })
     }
 
     const cancel = () => {
-        cleanup()
+        dispatch({
+            type: 'RESET'
+        })
         toggleModal()
     }
 
     const inputInvalid = () => {
-        return name.length < 1 && dirty
+        return state.name.length < 1 && state.dirty
     }
 
     return (
@@ -61,21 +90,29 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                 Add new Tuning
             </ModalHeader>
             <ModalBody>
-                <Input value={name}
+                <Input value={state.name}
                     invalid={inputInvalid()}
                     placeholder='Name'
-                    onChange={e => handleNameChange(e.target.value)}/>
-                {values.map((x, i) => <div className='AddTuningModal-string' key={i}>
-                    <span>String: {i + 1}</span> <NoteSelector
-                        handleNoteSelected={n => handleNoteClick(n, i)}
+                    onChange={e => dispatch({
+                        type : 'UPDATE_NAME',
+                        value: e.target.value
+                    })}/>
+                {state.values.map((x, string) => <div className='AddTuningModal-string' key={string}>
+                    <span>String: {string + 1}</span> <NoteSelector
+                        handleNoteSelected={note => dispatch({
+                            type : 'SELECT_NOTE_AT_STRING',
+                            value: { note, string: string }
+                        })}
                         focusNote={x} />
                 </div>)}
-                <Button onClick={addString}>+</Button>
+                <Button onClick={e => dispatch({
+                    type: 'ADD_STRING'
+                })}>+</Button>
             </ModalBody>
             <ModalFooter>
                 <Button onClick={cancel}>Cancel</Button>
                 <Button color='info'
-                    disabled={name.length < 1}
+                    disabled={inputInvalid()}
                     onClick={save}>
                     Add
                 </Button>
