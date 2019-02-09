@@ -2,44 +2,7 @@ import React, {Component} from 'react'
 import './NoteView.scss'
 import {connect} from 'react-redux'
 
-function getClasses ({note, focusNote, string, selectedNotes, scaleNotes}) {
-    const noteString = note.toString()
-
-    let className = 'note'
-
-    if (string !== undefined && selectedNotes) {
-        const notesOnThisString = selectedNotes.filter(x => {
-            return x.string === string && x.note === note.toString()
-        })
-        if (notesOnThisString.length > 0) {
-            return `${className} highlight-selected-note`
-        }
-    }
-
-    if (noteString === focusNote) {
-        return `${className} highlight`
-    }
-
-    if (scaleNotes) {
-        const notes = scaleNotes
-        const isScaleNote = notes.includes(noteString)
-
-        if (isScaleNote) {
-            return `${className} highlight-scale-note`
-        }
-    }
-
-    return className
-}
-
-const NoteDisplay = ({note, focusNote, onClick, scale = [], string = 0, selectedNotes = [], scaleNotes = []}) => (
-    <div className={getClasses({note, focusNote, scale, string, selectedNotes, scaleNotes})}
-        onClick={onClick}>
-        {note.toString()}
-    </div>
-)
-
-export { NoteDisplay }
+import {NoteDisplay} from '../presentational/NoteDisplay';
 
 class NoteView extends Component {
     constructor () {

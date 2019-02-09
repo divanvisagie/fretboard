@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Scale } from '../core/Scale'
 import { connect } from 'react-redux'
+import {Button} from 'reactstrap'
 
 import './NutView.scss'
+import { getColor } from '../presentational/NoteDisplay'
 
 class NutView extends Component {
     constructor () {
@@ -47,7 +49,7 @@ class NutView extends Component {
     }
 
     render () {
-        const { note, selectedNotes, string, focusNote, scale } = this.props
+        const { note, selectedNotes, string, focusNote, scale, scaleNotes } = this.props
         return (
             <div className='NutView'>
                 <span className={this.getClasses({
@@ -58,7 +60,11 @@ class NutView extends Component {
                     string
                 })}
                 onClick={this.handleClick}>
-                    {note.toString()}
+
+                    <Button outline color={getColor({note, focusNote, string, selectedNotes, scaleNotes})}>
+
+                        {note.toString()}
+                    </Button>
                 </span>
             </div>
         )

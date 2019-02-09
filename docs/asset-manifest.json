@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.b222499b.css",
-  "main.css.map": "static/css/main.b222499b.css.map",
-  "main.js": "static/js/main.64e34945.js",
-  "main.js.map": "static/js/main.64e34945.js.map"
+  "main.css": "/fretboard/static/css/main.9e9c27c5.chunk.css",
+  "main.js": "/fretboard/static/js/main.0ddc1b32.chunk.js",
+  "main.js.map": "/fretboard/static/js/main.0ddc1b32.chunk.js.map",
+  "static/js/1.0ee9ef4a.chunk.js": "/fretboard/static/js/1.0ee9ef4a.chunk.js",
+  "static/js/1.0ee9ef4a.chunk.js.map": "/fretboard/static/js/1.0ee9ef4a.chunk.js.map",
+  "runtime~main.js": "/fretboard/static/js/runtime~main.31f5ca51.js",
+  "runtime~main.js.map": "/fretboard/static/js/runtime~main.31f5ca51.js.map",
+  "static/css/main.9e9c27c5.chunk.css.map": "/fretboard/static/css/main.9e9c27c5.chunk.css.map",
+  "index.html": "/fretboard/index.html",
+  "precache-manifest.eacc0e2089877b94e46e9df06aa05d85.js": "/fretboard/precache-manifest.eacc0e2089877b94e46e9df06aa05d85.js",
+  "service-worker.js": "/fretboard/service-worker.js"
 }

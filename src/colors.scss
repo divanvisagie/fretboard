@@ -1,0 +1,23 @@
+@import "~nord/src/sass/nord";
+
+$theme-colors: (
+  primary: $nord10,
+  warning: $nord13,
+  info: $nord8,
+  secondary: $nord2,
+  success: $nord14,
+  danger: $nord11,
+  bg: $nord11,
+  light: $nord1
+);
+
+
+$body-bg:    $nord0;
+$body-color: $nord6;
+$modal-content-bg: $nord0;
+$input-bg: $nord0;
+$input-color: $nord6;
+$modal-header-border-color: $nord1;
+$dropdown-bg: $nord2;
+$dropdown-link-color: $nord6;
+$fretboard-bg: $nord1;

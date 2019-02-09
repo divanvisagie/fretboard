@@ -31,7 +31,7 @@ class ScaleSelectorComponent extends Component {
 
         return (
             <Fragment>
-                <div className='ScaleSelector-label'>Scale
+                <div className='ScaleSelector-label noselect'>Scale
                     <Dropdown className='ScaleSelector-selector' isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
                         <DropdownToggle caret>
                             {scale.name}

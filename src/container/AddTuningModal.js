@@ -1,14 +1,11 @@
 import React, {useReducer} from 'react'
 
 import { connect } from 'react-redux'
-
 import NoteSelector from '../presentational/NoteSelector'
-
 import {Plus, Delete} from 'react-feather'
-
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
 
-import './AddTuningModal.css'
+import './AddTuningModal.scss'
 
 const initialState = {
     values: ['A'],
@@ -114,18 +111,18 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                         type : 'UPDATE_NAME',
                         value: e.target.value
                     })}/>
-                {state.values.map((x, string) => <div className='AddTuningModal-string' key={string}>
+                {state.values.map((x, string) => <div className='string' key={string}>
                     <span>String: {string + 1}</span> <NoteSelector
                         handleNoteSelected={note => dispatch({
                             type : 'SELECT_NOTE_AT_STRING',
                             value: { note, string: string }
                         })}
                         focusNote={x} />
-                    <Delete className='delete'
-                        onClick={() => dispatch({
-                            type : 'REMOVE_STRING',
-                            value: string
-                        })}/>
+                    <Delete className='delete' onClick={() => dispatch({
+                        type : 'REMOVE_STRING',
+                        value: string
+                    })}/>
+                    
                 </div>)}
                 <Button onClick={e => dispatch({
                     type: 'ADD_STRING'

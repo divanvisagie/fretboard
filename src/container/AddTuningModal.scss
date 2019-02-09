@@ -1,0 +1,21 @@
+.AddTuningModal {
+    .string {
+        display: flex;
+        flex-direction: row;
+        padding: 16px 0 16px 0;
+
+        .delete:hover {
+            color: var(--danger);
+        }
+
+        .delete {
+            margin: 0 0 0 8px;
+            cursor: pointer;
+        }
+        
+        span {
+            padding: 0 16px 0 0
+        }
+
+    }
+}

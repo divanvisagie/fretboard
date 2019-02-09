@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { NoteDisplay } from '../container/NoteView'
+import { NoteDisplay } from './NoteDisplay'
 import Note, { notes } from '../core/Note'
 
 const noteObjects = notes.map(n => new Note(n))

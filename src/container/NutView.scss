@@ -1,19 +1,21 @@
 @import "~nord/src/sass/nord";
 
 .NutView {
-    padding-top: 2px;
-    width: 30px;
-    min-width: 30px;
+    $size: 26px;
+
+    .btn {
+        padding-top: 2px;
+        width: $size;
+        min-width: $size;
+        height: $size;
+        align-items: center;
+        font-size: 10pt;
+        overflow: hidden;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border-radius: 2px;
+    }
 }
 
-.NutView span.highlight-selected-note {
-    color: $nord11 !important;
-}
-
-.NutView span.highlight-scale-note {
-    color: $nord8 !important;
-}
-
-.NutView span.highlight {
-    color: $nord14;
-}

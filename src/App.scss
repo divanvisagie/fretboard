@@ -1,9 +1,9 @@
 @import "~nord/src/sass/nord";
+@import "./colors";
 
 .App {
   text-align: center;
   overflow-x: hidden;
-  /* background: var(--background-primary, white); */
   height: 100vh;
 }
 
@@ -53,8 +53,7 @@
   display: flex;
   justify-content: center;
   margin: 16px 0 16px 0;
-  // background: var(--background-secondary, #eee);
-  background: $nord1;
+  background: var(--light);
   padding: 0;
 }
 

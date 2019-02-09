@@ -48,9 +48,9 @@ class TuningSelector extends Component {
                         )}
                     </DropdownMenu>
                 </ButtonDropdown>
-                <Button color='info' onClick={handleTuningAddClick}>
+                {/* <Button color='info' onClick={handleTuningAddClick}>
                     <Edit />
-                </Button>
+                </Button> */}
                 <Button color='primary' onClick={handleTuningAddClick}>
                     <Plus />
                 </Button>
