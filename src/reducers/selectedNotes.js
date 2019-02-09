@@ -8,8 +8,7 @@ export default function selectedNotes (state = [], action) {
         const existingIndex = state.findIndex(findExisting)
         if (existingIndex < 0) {
             return [...state, value]
-        }
-        else {
+        } else {
             return state.filter(i => !findExisting(i))
         }
     case 'CLEAR_SELECTED_NOTES':
