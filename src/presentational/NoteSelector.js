@@ -9,10 +9,10 @@ const NoteSelector = ({ focusNote, handleNoteSelected }) =>
     <div className='noselect FocusNoteSelector-notes'>
         {noteObjects.map((x, i) =>
             <NoteDisplay
-                key={i}
+                key={i.toString()}
                 focusNote={focusNote}
                 note={x}
-                onClick={e => handleNoteSelected(x.toString())} />
+                onClick={() => handleNoteSelected(x.toString())} />
         )}
     </div>
 

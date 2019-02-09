@@ -7,11 +7,12 @@ import frets from './frets'
 import key from './key'
 
 import Scale, {scales} from '../core/Scale'
+import Note from '../core/Note';
 
 const [firstScale] = scales
 const scaleNotesState = Scale(focusNoteState, firstScale.sequence)
     .noteSequence()
-    .map(n => n.toString())
+    .map((n: Note) => n.toString())
 
 function scale (state = firstScale, action) {
     switch (action.type) {
@@ -23,7 +24,7 @@ function scale (state = firstScale, action) {
     }
 }
 
-function scaleNotes (state = scaleNotesState, action) {
+function scaleNotes (state: Array<string> = scaleNotesState, action): Array<string> {
     if (action.type === 'SET_SCALE_NOTES') {
         state = action.value
         return state

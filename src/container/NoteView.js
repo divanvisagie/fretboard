@@ -32,7 +32,7 @@ function getClasses ({note, focusNote, string, selectedNotes, scaleNotes}) {
     return className
 }
 
-const NoteDisplay = ({note, focusNote, onClick, scale, string, selectedNotes, scaleNotes}) => (
+const NoteDisplay = ({note, focusNote, onClick, scale = [], string = 0, selectedNotes = [], scaleNotes = []}) => (
     <div className={getClasses({note, focusNote, scale, string, selectedNotes, scaleNotes})}
         onClick={onClick}>
         {note.toString()}

@@ -15,9 +15,9 @@ const Settings = ({handleFretsChange, frets}) =>
         min={12} />
 
 const mapStateToProps = (state) => {
-    return {
+    return ({
         frets: state.frets
-    }
+    })
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
         handleFretsChange (event) {
             dispatch({
                 type : 'SET_FRETS',
-                value: event.target.value
+                value: parseInt(event.currentTarget.value, 10)
             })
         }
     }
