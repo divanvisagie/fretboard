@@ -5,6 +5,10 @@
   "homepage": "http://dvisagie.com/fretboard/",
   "private": true,
   "dependencies": {
+    "@types/jest": "^24.0.0",
+    "@types/node": "^10.12.24",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
     "bootstrap": "^4.2.1",
     "concurrently": "^3.5.1",
     "electron-is-dev": "^0.3.0",
@@ -17,10 +21,11 @@
     "react-feather": "^1.1.6",
     "react-ga": "^2.4.1",
     "react-redux": "^5.0.6",
-    "react-scripts": "2.0.3",
+    "react-scripts": "2.1.0",
     "reactstrap": "^7.1.0",
     "redux": "^3.7.2",
     "redux-saga": "^1.0.1",
+    "typescript": "^3.3.3",
     "underscore": "^1.9.1",
     "webpack-dev-server": "3.1.9"
   },
