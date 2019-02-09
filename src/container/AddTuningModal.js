@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import NoteSelector from '../presentational/NoteSelector'
 
+import {Plus, Delete} from 'react-feather'
+
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input } from 'reactstrap'
 
 import './AddTuningModal.css'
@@ -44,12 +46,27 @@ const addString = (state) => {
     }
 }
 
+const removeStringInState = (state, string) => {
+    const {name} = state
+    const values = [
+        ...state.values.slice(0, string),
+        ...state.values.slice(string + 1, state.values.length)
+    ]
+    return {
+        name,
+        dirty: true,
+        values
+    }
+}
+
 const tuningReducer = (state = initialState, action) => {
     switch (action.type) {
     case 'SELECT_NOTE_AT_STRING':
         return updateSelectedNoteInState(state, action.value)
     case 'UPDATE_NAME':
         return updateNameInState(state, action.value)
+    case 'REMOVE_STRING':
+        return removeStringInState(state, action.value)
     case 'RESET':
         return initialState
     case 'ADD_STRING':
@@ -85,7 +102,7 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
     }
 
     return (
-        <Modal isOpen={modalOpen} toggle={toggleModal}>
+        <Modal isOpen={modalOpen} toggle={toggleModal} className='AddTuningModal'>
             <ModalHeader>
                 Add new Tuning
             </ModalHeader>
@@ -104,15 +121,22 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                             value: { note, string: string }
                         })}
                         focusNote={x} />
+                    <Delete class='delete'
+                        onClick={() => dispatch({
+                            type : 'REMOVE_STRING',
+                            value: string
+                        })}/>
                 </div>)}
                 <Button onClick={e => dispatch({
                     type: 'ADD_STRING'
-                })}>+</Button>
+                })}>
+                    <Plus />
+                </Button>
             </ModalBody>
             <ModalFooter>
                 <Button onClick={cancel}>Cancel</Button>
                 <Button color='info'
-                    disabled={inputInvalid()}
+                    disabled={state.name.length < 1}
                     onClick={save}>
                     Add
                 </Button>

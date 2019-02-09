@@ -7,3 +7,12 @@
 .AddTuningModal-string span {
     padding: 0 16px 0 0
 }
+
+.AddTuningModal .delete {
+    margin: 0 0 0 8px;
+    cursor: pointer;
+}
+
+.AddTuningModal .delete:hover {
+    color: red;
+}
