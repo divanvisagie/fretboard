@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 
 import Fretboard from './container/Fretboard'
 import TuningSelector from './container/TuningSelector'

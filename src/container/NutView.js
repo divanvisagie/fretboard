@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Scale } from '../core/Scale'
 import { connect } from 'react-redux'
 
-import './NutView.css'
+import './NutView.scss'
 
 class NutView extends Component {
     constructor () {

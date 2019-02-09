@@ -1,0 +1,77 @@
+@import "~nord/src/sass/nord";
+
+.NoteView {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    width: 42px;
+
+    .note-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 2px 0 2px 0;
+        width: 42px;
+    }
+    .fret {
+        float: right;
+        background: var(--fret-color);
+        width: 1px;
+        height: 100%;;
+        margin-right: 0;
+    }
+    
+    .string {
+        height: 1px;
+        width: 25%;
+        border-bottom: 1px solid var(--string-color);
+        margin-top: 11px;
+        margin-right: -1px;
+    }
+}
+
+
+
+.note.highlight {
+    background: $nord14 !important;
+    box-shadow: $nord14 0px 0px 2px;
+    color: $nord0
+}
+
+.note.highlight-scale-note {
+    background: $nord8 !important;
+    color: $nord0;
+    // color: var(--scale-text) !important;
+}
+
+.note.highlight-selected-note {
+    background: $nord11 !important;
+    color: $nord0;
+}
+.note.highlight-selected-note:hover {
+    color: $nord11 !important;
+    box-shadow: $nord11 0px 0px 5px;
+}
+
+.note {
+    cursor: pointer;
+    font-size: 10pt;
+    width: 24px;   
+    height: 24px;
+    border: 1px solid var(--note-outline-color);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+}
+
+.note:hover { 
+    background: var(--background-primary);
+    box-shadow: #777 0px 0px 2px;
+    color: var(--selection-primary);
+}

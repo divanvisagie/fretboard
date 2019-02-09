@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 
 import { Button } from 'reactstrap'
 
-import './ClearSelected.css'
-
 const mapStateToProps = (state) => {
     return {
         selectedNotes: state.selectedNotes

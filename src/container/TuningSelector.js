@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownItem, DropdownToggle, ButtonGroup, Button, Button
 
 import AddTuningModal from './AddTuningModal'
 
-import {Plus} from 'react-feather'
+import {Plus, Edit} from 'react-feather'
 
 import './TuningSelector.css'
 
@@ -49,6 +49,9 @@ class TuningSelector extends Component {
                     </DropdownMenu>
                 </ButtonDropdown>
                 <Button color='info' onClick={handleTuningAddClick}>
+                    <Edit />
+                </Button>
+                <Button color='primary' onClick={handleTuningAddClick}>
                     <Plus />
                 </Button>
             </ButtonGroup>

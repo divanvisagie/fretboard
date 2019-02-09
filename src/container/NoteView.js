@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './NoteView.css'
+import './NoteView.scss'
 import {connect} from 'react-redux'
 
 function getClasses ({note, focusNote, string, selectedNotes, scaleNotes}) {

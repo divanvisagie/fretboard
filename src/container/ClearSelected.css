@@ -1,9 +1,0 @@
-.ClearSelected.btn {
-    color: var(--selection-primary);
-    border-color: var(--selection-primary);
-}
-
-.ClearSelected.btn:hover {
-    background: var(--selection-primary);
-    color: var(--text);
-}

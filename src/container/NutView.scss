@@ -1,3 +1,5 @@
+@import "~nord/src/sass/nord";
+
 .NutView {
     padding-top: 2px;
     width: 30px;
@@ -5,13 +7,13 @@
 }
 
 .NutView span.highlight-selected-note {
-    color: var(--selection-primary) !important;
+    color: $nord11 !important;
 }
 
 .NutView span.highlight-scale-note {
-    color: var(--scale-primary) !important;
+    color: $nord8 !important;
 }
 
 .NutView span.highlight {
-    color: var(--focus-primary) !important;
+    color: $nord14;
 }
