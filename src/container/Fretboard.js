@@ -9,25 +9,15 @@ import MarkerBoard from '../presentational/MarkerBoard'
 
 import GuitarString from '../presentational/GuitarString'
 
-const Component = ({tuning,
-    frets,
-    scaleNotes,
-    onNoteClick,
-    focusNote,
-    scale,
-    selectedNotes}) =>
+const Component = ({tuning, frets}) =>
     <div className='Fretboard noselect'>
         <div>
             {reverse(tuning).map((note, i) =>
                 <GuitarString rootNote={note}
                     frets={frets}
-                    scale={scale}
-                    onClick={n => onNoteClick(n, i)}
                     key={i}
-                    string={i}
-                    scaleNotes={scaleNotes}
-                    selectedNotes={selectedNotes}
-                    focusNote={focusNote} />
+                    string={i}>
+                </GuitarString>
             )}
         </div>
         <MarkerBoard frets={frets}/>
@@ -35,12 +25,8 @@ const Component = ({tuning,
 
 const mapStateToProps = (state) => {
     return {
-        tuning       : state.tuning.value,
-        frets        : state.frets,
-        focusNote    : state.focusNote,
-        scale        : state.scale,
-        selectedNotes: state.selectedNotes,
-        scaleNotes   : state.scaleNotes
+        tuning: state.tuning.value,
+        frets : state.frets
     }
 }
 const mapDispatchToProps = (dispatch) => {

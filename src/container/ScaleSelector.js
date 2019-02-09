@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { connect } from 'react-redux'
 import React, { Fragment, Component } from 'react'
 

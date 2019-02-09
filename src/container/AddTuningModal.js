@@ -66,7 +66,7 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                     placeholder='Name'
                     onChange={e => handleNameChange(e.target.value)}/>
                 {values.map((x, i) => <div className='AddTuningModal-string' key={i}>
-                        <span>String: {i + 1}</span> <NoteSelector
+                    <span>String: {i + 1}</span> <NoteSelector
                         handleNoteSelected={n => handleNoteClick(n, i)}
                         focusNote={x} />
                 </div>)}
