@@ -7,6 +7,7 @@ import ScaleSelector from './container/ScaleSelector'
 import ClearSelected from './container/ClearSelected'
 import Settings from './container/Settings'
 import FocusNoteSelector from './container/FocusNoteSelector'
+import LanguageSelector from './container/LanguageSelector'
 
 const App = () => (
     <div className='App'>
@@ -17,6 +18,7 @@ const App = () => (
             <div className='App-toolbar-menu'>
                 <TuningSelector />
                 <Settings />
+                <LanguageSelector />
             </div>
         </div>
 

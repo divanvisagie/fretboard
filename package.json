@@ -19,6 +19,7 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-feather": "^1.1.6",
+    "react-flagkit": "^1.0.2",
     "react-ga": "^2.4.1",
     "react-redux": "^5.0.6",
     "react-scripts": "^2.1.3",
