@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownItem, DropdownToggle, ButtonGroup, Button, Button
 
 import AddTuningModal from './AddTuningModal'
 
-import {Plus, Edit} from 'react-feather'
+import {Plus} from 'react-feather'
 
 import './TuningSelector.css'
 
