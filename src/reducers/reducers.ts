@@ -5,7 +5,7 @@ import focusNote, {focusNoteState} from './focusNote'
 import selectedNotes from './selectedNotes'
 import frets from './frets'
 import key from './key'
-import {language, languages} from './languages'
+import {language, languages, translations} from './languages'
 
 import Scale, {scales} from '../core/Scale'
 import Note from '../core/Note';
@@ -44,5 +44,6 @@ export default combineReducers({
     scaleNotes,
     selectedNotes,
     language,
-    languages
+    languages,
+    translations
 })

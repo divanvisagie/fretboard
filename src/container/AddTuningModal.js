@@ -122,7 +122,6 @@ const TuningModal = ({ modalOpen, toggleModal, addTuning }) => {
                         type : 'REMOVE_STRING',
                         value: string
                     })}/>
-                    
                 </div>)}
                 <Button onClick={e => dispatch({
                     type: 'ADD_STRING'

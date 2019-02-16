@@ -32,3 +32,15 @@ export function language (state: Language = first, action: LanguageAction): Lang
 export function languages (state = languageList): Array<Language> {
     return state
 }
+
+export interface TranslationAction extends Action {
+    value: Object
+}
+
+export function translations (state: Object = {}, action: TranslationAction) {
+    switch(action.type) {
+        case 'SET_TRANSLATIONS':
+            return action.value
+    }
+    return state
+}
