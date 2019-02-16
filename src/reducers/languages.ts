@@ -14,10 +14,14 @@ const languageList: Array<Language> = [
         flag: 'GB',
         name: 'English'
     },
+    {
+        flag: 'FR',
+        name: 'Française'
+    },
     { 
         flag: 'NO',
         name: 'Norsk'
-    }
+    },
 ]
 
 const [first] = languageList
