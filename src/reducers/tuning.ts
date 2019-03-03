@@ -22,6 +22,10 @@ const tunings = [
     {
         name : 'Bass E',
         value: ['E', 'A', 'D', 'G']
+    },
+    {
+        name: 'Germanic Lyre E',
+        value: ['E', 'F#', 'G#', 'A', 'B', 'C#']
     }
 ]
 

@@ -18,7 +18,7 @@ const App = () => (
             <div className='App-toolbar-menu'>
                 <TuningSelector />
                 <Settings />
-                <LanguageSelector />
+                {/* <LanguageSelector /> */}
             </div>
         </div>
 
