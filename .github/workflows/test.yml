@@ -26,13 +26,7 @@ jobs:
       
     - run: npm install -g node-gyp
     - run: npm install -g yarn
-      
-    - name: Install
     - run: yarn install
-      
-    - name: Lint
     - run: yarn lint
-      
-    - name: Test
     - run: yarn test
     
