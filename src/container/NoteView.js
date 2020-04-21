@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './NoteView.scss'
 import {connect} from 'react-redux'
 
-import {NoteDisplay} from '../presentational/NoteDisplay';
+import {NoteDisplay} from '../presentational/NoteDisplay'
 
 class NoteView extends Component {
     constructor () {
