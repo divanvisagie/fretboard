@@ -22,20 +22,17 @@ jobs:
     - name: Use Node.js 10.0
       uses: actions/setup-node@v1
       with:
-          node-version: 10.0
-      
+          node-version: 10.0      
       
     - run: npm install -g node-gyp
-    
+    - run: npm install -g yarn
+      
     - name: Install
-      uses: CultureHQ/actions-yarn@master
-      with:
-        args: install
+    - run: yarn install
+      
     - name: Lint
-      uses: CultureHQ/actions-yarn@master
-      with:
-        args: lint
+    - run: yarn lint
+      
     - name: Test
-      uses: CultureHQ/actions-yarn@master
-      with:
-        args: test
+    - run: yarn test
+    
