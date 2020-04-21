@@ -16,13 +16,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
+    - name: Setup Python
+      uses: actions/setup-python@v1.2.0
+    
+    - name: Make SCSS work
+      uses: gha-utilities/sass-build@v0.2.2
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
           node-version: 10.16
       
-    - name: Setup Python
-      uses: actions/setup-python@v1.2.0
+   
       
     - run: npm install -g node-gyp
     
