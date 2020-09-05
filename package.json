@@ -12,7 +12,7 @@
     "bootstrap": "^4.3.1",
     "concurrently": "^3.5.1",
     "global": "^4.3.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nord": "^0.2.1",
     "ramda": "^0.25.0",
     "react": "^16.1.1",
