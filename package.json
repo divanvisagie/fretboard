@@ -26,7 +26,7 @@
     "redux": "^3.7.2",
     "redux-saga": "^1.0.1",
     "typescript": "^3.3.3",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "webpack-dev-server": "3.1.14"
   },
   "main": "public/electron.js",
