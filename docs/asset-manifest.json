@@ -1,7 +1,7 @@
 {
-  "main.css": "/fretboard/static/css/main.1749250c.chunk.css",
-  "main.js": "/fretboard/static/js/main.ade6a955.chunk.js",
-  "main.js.map": "/fretboard/static/js/main.ade6a955.chunk.js.map",
+  "main.css": "/fretboard/static/css/main.1de97cbe.chunk.css",
+  "main.js": "/fretboard/static/js/main.5351ebef.chunk.js",
+  "main.js.map": "/fretboard/static/js/main.5351ebef.chunk.js.map",
   "static/js/1.10d34495.chunk.js": "/fretboard/static/js/1.10d34495.chunk.js",
   "static/js/1.10d34495.chunk.js.map": "/fretboard/static/js/1.10d34495.chunk.js.map",
   "runtime~main.js": "/fretboard/static/js/runtime~main.31f5ca51.js",
@@ -263,8 +263,8 @@
   "static/media/ZA.svg": "/fretboard/static/media/ZA.c2a25ca1.svg",
   "static/media/ZM.svg": "/fretboard/static/media/ZM.0489c39b.svg",
   "static/media/ZW.svg": "/fretboard/static/media/ZW.21158d0f.svg",
-  "static/css/main.1749250c.chunk.css.map": "/fretboard/static/css/main.1749250c.chunk.css.map",
+  "static/css/main.1de97cbe.chunk.css.map": "/fretboard/static/css/main.1de97cbe.chunk.css.map",
   "index.html": "/fretboard/index.html",
-  "precache-manifest.62dc4771fe0e618c85aefe74da7ff31a.js": "/fretboard/precache-manifest.62dc4771fe0e618c85aefe74da7ff31a.js",
+  "precache-manifest.7ca776fd5eb6520d8861eeb987fcb328.js": "/fretboard/precache-manifest.7ca776fd5eb6520d8861eeb987fcb328.js",
   "service-worker.js": "/fretboard/service-worker.js"
 }
