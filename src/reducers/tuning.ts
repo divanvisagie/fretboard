@@ -4,6 +4,10 @@ const tunings = [
         value: ['E', 'A', 'D', 'G', 'B', 'E']
     },
     {
+        name: 'E Flat',
+        value: ['D#', 'G#', 'C#', 'F#', 'A#', 'D#']
+    }, 
+    {
         name : 'Standard C',
         value: ['C', 'F', 'A#', 'D#', 'G', 'C']
     },
@@ -14,6 +18,10 @@ const tunings = [
     {
         name : 'Drop C',
         value: ['C', 'G', 'C', 'F', 'A', 'D']
+    },
+    {
+        name : 'Open C',
+        value: ['C', 'G', 'C', 'G', 'C', 'E']
     },
     {
         name : 'Standard B (7 String)',

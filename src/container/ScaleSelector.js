@@ -47,8 +47,8 @@ class ScaleSelectorComponent extends Component {
                 </div>
 
                 <div className='ScaleSelector-sequence'>
-                    {scale.sequence.map((n, key) =>
-                        <span key={key}>{n}</span>
+                    {scale.sequence.map((_item, index) =>
+                        <span key={index}>{index+1}</span>
                     )}
                 </div>
                 <div className='ScaleSelector-sequence'>
