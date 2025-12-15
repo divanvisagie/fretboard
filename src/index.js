@@ -1,11 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import {createStore, applyMiddleware, compose} from 'redux'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import ReactGA from 'react-ga'
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import './nord.css'
 import './index.scss'
 import App from './App'
 
@@ -27,14 +25,14 @@ sagaMiddleWare.run(setFocusNoteSaga)
 sagaMiddleWare.run(setLanuageSaga)
 
 ReactGA.initialize('UA-113213939-1', {
-    debug: (window.location.hostname !== 'dvisagie.com')
+    debug: (window.location.hostname !== 'divanv.com')
 })
 ReactGA.pageview(window.location.pathname)
 
-ReactDOM.render(
-
+const container = document.getElementById('root')
+const root = createRoot(container)
+root.render(
     <Provider store={store}>
         <App />
     </Provider>
-    ,
-    document.getElementById('root'))
+)
