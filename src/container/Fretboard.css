@@ -9,6 +9,10 @@
     flex-direction: column;
     padding: 20px 16px 20px 16px;
     box-sizing: border-box;
+    background: var(--background-secondary);
+    color: var(--text-color);
+    border-radius: 0;
+    scrollbar-color: var(--subtitle-color) var(--background-secondary);
 
     -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
 }
@@ -28,10 +32,11 @@
 }
  
 .Fretboard::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.15);
+    background: var(--background-secondary);
 }
  
 .Fretboard::-webkit-scrollbar-thumb {
-  background-color: rgb(40, 46, 56);
-  outline: 1px solid slategrey;
+  background-color: var(--subtitle-color);
+  outline: 1px solid var(--subtitle-color);
 }

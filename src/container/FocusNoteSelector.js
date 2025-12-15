@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const Component = ({focusNote, handleNoteSelected}) =>
     <Fragment>
-        <div>Focus Note</div>
+        <div className='FocusNoteSelector-label'>Focus Note</div>
         <NoteSelector focusNote={focusNote} handleNoteSelected={handleNoteSelected} />
     </Fragment>
 

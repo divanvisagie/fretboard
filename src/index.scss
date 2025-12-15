@@ -1,50 +1,164 @@
 @import "colors";
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('https://divanv.com/fonts/UbuntuMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('https://divanv.com/fonts/UbuntuMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('https://divanv.com/fonts/UbuntuMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('https://divanv.com/fonts/UbuntuMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
-  --background-primary: rgb(46,52,63);
-  --background-secondary: $nord0;
-  --text: rgb(236,239,234);
+  --background-primary: var(--background-color, #ffffff);
+  --background-secondary: var(--background-color, #ffffff);
+  --text: var(--text-color, #111111);
 
-  --selection-primary: $nord11;
-  --selection-text: rgb(46,52,63);
+  --selection-primary: var(--accent-color, #ff6600);
+  --selection-text: #ffffff;
 
-  --focus-primary: $nord14;
-  --focus-text: rgb(46,52,63);
+  --focus-primary: var(--accent-color, #ff6600);
+  --focus-text: #ffffff;
 
-  /* --scale-primary: rgb(136,192,208); */
-  // --scale-primary: var(--nord8);
-  --scale-text: rgb(46,52,63);
-  --note-outline-color: #aaa;
+  --scale-text: var(--background-color, #ffffff);
+  --note-outline-color: var(--subtitle-color, #2f2925);
 
-  --fret-color: #777;
-  --string-color: #aaa;
-
-  // --primary: var(--nord10);
+  --fret-color: var(--subtitle-color, #2f2925);
+  --string-color: var(--text-color, #111111);
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                        supported by Chrome and Opera */
+[data-theme="dark"] {
+  --background-primary: var(--background-color, #000000);
+  --background-secondary: var(--background-color, #000000);
+  --text: var(--text-color, #ededed);
+  --selection-text: #000000;
+  --focus-text: #000000;
+  --scale-text: #000000;
+  --note-outline-color: var(--subtitle-color, #c5c5c5);
+  --fret-color: var(--subtitle-color, #c5c5c5);
+  --string-color: var(--text-color, #ededed);
 }
 
-html,
-body {
-  position: fixed;
-  overflow: hidden;
-  width:100%;
-  height: 100vh;
+html {
+  width: 100%;
+  font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+  background: var(--background-color);
 }
 
+::selection {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link-color-visited);
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  min-height: 100vh;
+  width: 100%;
+  font-size: 12pt;
+  font-weight: 400;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+  letter-spacing: -0.1px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #e65c00;
+  border-color: #e65c00;
+}
+
+.btn-secondary {
+  background: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--subtitle-color);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--toolbar-background);
+  color: var(--toolbar-foreground-hover);
+  border-color: var(--accent-color);
+}
+
+.dropdown-menu {
+  background: var(--background-color);
+  border: 1px solid var(--subtitle-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.dropdown-item {
+  color: var(--text-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+.form-control {
+  background: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--subtitle-color);
+}
+
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: none;
 }

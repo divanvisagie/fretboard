@@ -18,10 +18,11 @@ class NoteView extends Component {
 
     render () {
         const { note, focusNote, scale, string, selectedNotes, scaleNotes } = this.props
+        const stringThickness = getStringThickness(string)
         return (
             <div className='NoteView'>
                 <div className='note-area'>
-                    <div className='string'></div>
+                    <div className='string' style={{'--string-thickness': `${stringThickness}px`}}></div>
                     <NoteDisplay
                         note={note}
                         scale={scale}
@@ -31,12 +32,21 @@ class NoteView extends Component {
                         selectedNotes={selectedNotes}
                         onClick={this.handleClick}
                     />
-                    <div className='string'></div>
+                    <div className='string' style={{'--string-thickness': `${stringThickness}px`}}></div>
                 </div>
                 <div className='fret'></div>
             </div>
         )
     }
+}
+
+const stringThicknessMap = [1, 1.2, 1.6, 2, 2.4, 3]
+
+function getStringThickness (stringIndex) {
+    if (stringIndex < stringThicknessMap.length) {
+        return stringThicknessMap[stringIndex]
+    }
+    return stringThicknessMap[stringThicknessMap.length - 1]
 }
 
 const mapStateToProps = (state) => {

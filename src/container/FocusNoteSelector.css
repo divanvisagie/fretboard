@@ -1,11 +1,20 @@
+.FocusNoteSelector-label {
+    color: var(--subtitle-color);
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    margin: 0 0 8px 0;
+}
+
 .FocusNoteSelector-selector {
     max-width: 320px;
 }
 
 .FocusNoteSelector-notes {
     display: flex;
+    gap: 6px;
+    color: var(--text-color);
 }
 
 .FocusNoteSelector-notes * {
-    margin-right: 5px;
+    margin-right: 0;
 }

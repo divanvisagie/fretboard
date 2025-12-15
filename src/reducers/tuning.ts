@@ -39,7 +39,7 @@ const tunings = [
 
 const tuningDefault = {
     name : 'Standard E',
-    value: ['E', 'A', 'D', 'G', 'B', 'G']
+    value: ['E', 'A', 'D', 'G', 'B', 'E']
 }
 
 export function tuning (state = tuningDefault, action) {

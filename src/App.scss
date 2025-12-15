@@ -1,60 +1,102 @@
-@import "~nord/src/sass/nord";
 @import "./colors";
 
 .App {
   text-align: center;
   overflow-x: hidden;
-  height: 100vh;
-}
-
-.App .menu-button {
-  margin-right: 20px;
-  flex:1;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.App-logo {
-  margin: auto;
-  height: 80px;
-  width: 80px;
-}
-
-.App-toolbar{
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+nav {
+  user-select: none;
+  background: var(--toolbar-background);
+  overflow: hidden;
+  height: 80px;
+  line-height: 1;
+}
+
+nav > div {
   width: 100%;
-  padding: 16px 16px 0px 16px;
+  overflow: hidden;
+  padding: 0 28px 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav h1 {
+  font-size: 1.7em;
+  margin: 0;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+nav a {
+  color: var(--toolbar-foreground);
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: var(--toolbar-foreground);
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+.nav-separator {
+  color: var(--accent-color);
+  margin: 0 8px;
+}
+
+.nav-project {
+  color: var(--toolbar-foreground);
+}
+
+@media (max-width: 436px) {
+  .full {
+    display: none;
+  }
 }
 
 .App-toolbar-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.App-content {
+  flex: 1;
+  overflow-y: auto;
 }
 
 .App-pre-fretboard {
-  margin: 20px;
+  margin: 22px;
   text-align: left;
-}
-
-.App-title {
-  font-size: 1.5em;
-  flex:1;
-  text-align: left;
-}
-
-.App-intro {
-  font-size: large;
+  border: 1px solid var(--subtitle-color);
+  padding: 16px;
+  background: var(--background-color);
+  box-sizing: border-box;
 }
 
 .App-fretboard-container {
   display: flex;
   justify-content: center;
-  margin: 16px 0 16px 0;
-  background: var(--light);
-  padding: 0;
+  margin: 16px 22px 16px 22px;
+  background: var(--background-color);
+  border: 1px solid var(--subtitle-color);
+  padding: 12px 0;
 }
 
 .App-fretboard-button {
@@ -62,4 +104,27 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  border-top: 1px solid var(--subtitle-color);
+  margin: 0 22px 22px 22px;
+}
+
+footer {
+  background: var(--footer-background, var(--background-color));
+  color: var(--subtitle-color);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0;
+  width: 100%;
+  border-top: 1px solid var(--accent-color);
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+footer a:visited {
+  color: var(--link-color-visited);
 }

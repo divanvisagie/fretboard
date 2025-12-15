@@ -1,5 +1,3 @@
-@import "~nord/src/sass/nord";
-
 .NoteView {
     display: flex;
     flex-direction: row;
@@ -10,6 +8,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         margin: 2px 0 2px 0;
         width: 42px;
     }
@@ -22,11 +21,10 @@
     }
     
     .string {
-        height: 1px;
+        height: var(--string-thickness, 1px);
         width: 25%;
-        border-bottom: 1px solid var(--string-color);
-        margin-top: 11px;
-        margin-right: -1px;
+        background: var(--string-color);
+        border-radius: 999px;
+        margin: 0 -1px 0 0;
     }
 }
-

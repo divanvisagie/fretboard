@@ -1,23 +1,110 @@
-@import "~nord/src/sass/nord";
+// Theme colors using divanv.com palette
+$accent: #ff6600;
+$bg-light: #ffffff;
+$bg-dark: #000000;
+$text-light: #111111;
+$text-dark: #ededed;
+$subtitle-light: #2f2925;
+$subtitle-dark: #c5c5c5;
 
 $theme-colors: (
-  primary: $nord10,
-  warning: $nord13,
-  info: $nord8,
-  secondary: $nord2,
-  success: $nord14,
-  danger: $nord11,
-  bg: $nord11,
-  light: $nord1
+  primary: $accent,
+  warning: #f5871f,
+  info: #4271ae,
+  secondary: $subtitle-light,
+  success: #718c00,
+  danger: #c82829,
+  light: $bg-light,
+  dark: $bg-dark
 );
 
+$body-bg: $bg-light;
+$body-color: $text-light;
+$modal-content-bg: $bg-light;
+$input-bg: $bg-light;
+$input-color: $text-light;
+$modal-header-border-color: $subtitle-light;
+$dropdown-bg: $bg-light;
+$dropdown-link-color: $text-light;
+$fretboard-bg: $bg-light;
 
-$body-bg:    $nord0;
-$body-color: $nord6;
-$modal-content-bg: $nord0;
-$input-bg: $nord0;
-$input-color: $nord6;
-$modal-header-border-color: $nord1;
-$dropdown-bg: $nord2;
-$dropdown-link-color: $nord6;
-$fretboard-bg: $nord1;
+$font-family-monospace: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+$font-family-base: $font-family-monospace;
+$headings-font-family: $font-family-monospace;
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm: 0;
+$input-border-radius: 0;
+$dropdown-border-color: $subtitle-light;
+$input-border-color: $subtitle-light;
+
+:root {
+  --accent-color: #ff6600;
+  --toolbar-background: #ffffff;
+  --toolbar-foreground: #111111;
+  --toolbar-foreground-hover: #000000;
+  --code-background: transparent;
+  --code-foreground: var(--text-color);
+  --footer-background: #ffffff;
+  --background-color: #ffffff;
+  --text-color: #111111;
+  --title-color: #0f0c0a;
+  --subtitle-color: #2f2925;
+  --link-color: #1a4fb5;
+  --link-color-visited: #5a3c99;
+  --button-width: 48px;
+  --angle: 90deg;
+  --syntax-text: #2b2b2b;
+  --syntax-comment: #8e908c;
+  --syntax-keyword: #8959a8;
+  --syntax-string: #718c00;
+  --syntax-number: #f5871f;
+  --syntax-attr: #4271ae;
+
+  --primary: #ff6600;
+  --warning: #f5871f;
+  --info: #4271ae;
+  --secondary: #2f2925;
+  --success: #718c00;
+  --danger: #c82829;
+  --light: #ffffff;
+  --dark: #000000;
+}
+
+[data-theme="dark"] {
+  --toolbar-background: #000000;
+  --code-background: #000000;
+  --background-color: #000000;
+  --text-color: #ededed;
+  --title-color: #ffffff;
+  --subtitle-color: #c5c5c5;
+  --footer-background:#000000;
+  --link-color: #6f9dff;
+  --link-color-visited: #a88ce6;
+  --toolbar-foreground: #f3f3f3;
+  --toolbar-foreground-hover: #ffffff;
+  --syntax-text: #eaeaea;
+  --syntax-comment: #969896;
+  --syntax-keyword: #cc99cd;
+  --syntax-string: #99cc99;
+  --syntax-number: #f99157;
+  --syntax-attr: #81a2be;
+
+  --primary: #ff6600;
+  --warning: #f5871f;
+  --info: #81a2be;
+  --secondary: #c5c5c5;
+  --success: #99cc99;
+  --danger: #c82829;
+  --light: #000000;
+  --dark: #ededed;
+}
+
+[data-theme="dark"] .themed { 
+  filter: invert(1);
+  background: transparent;
+}

@@ -1,7 +1,7 @@
 .NoteDisplay {
     button {
         font-size: 10pt;
-        width: 24px;   
+        width: 24px;
         height: 24px;
         border: 1px solid var(--note-outline-color);
         border-radius: 50%;
@@ -13,5 +13,25 @@
         z-index: 3;
         margin: 0;
         padding: 0;
+        background: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .btn-success {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+        color: #ffffff;
+    }
+
+    .btn-info {
+        background: var(--link-color);
+        border-color: var(--link-color);
+        color: #ffffff;
+    }
+
+    .btn-danger {
+        background: #c82829;
+        border-color: #c82829;
+        color: #ffffff;
     }
 }
