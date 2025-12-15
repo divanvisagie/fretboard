@@ -140,6 +140,7 @@ body {
   border: 1px solid var(--subtitle-color);
   border-radius: 0;
   box-shadow: none;
+  z-index: 1000;
 }
 
 .dropdown-item {

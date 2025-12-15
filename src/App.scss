@@ -14,14 +14,16 @@
 nav {
   user-select: none;
   background: var(--toolbar-background);
-  overflow: hidden;
+  overflow: visible;
   height: 80px;
   line-height: 1;
+  position: relative;
+  z-index: 100;
 }
 
 nav > div {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding: 0 28px 0 22px;
   display: flex;
   justify-content: space-between;
@@ -79,6 +81,8 @@ nav a:hover {
 .App-content {
   flex: 1;
   overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .App-pre-fretboard {
