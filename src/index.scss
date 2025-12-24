@@ -108,6 +108,7 @@ body {
 
 .btn {
   font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+  font-weight: 500;
   letter-spacing: -0.1px;
   border-radius: 0;
   box-shadow: none;
@@ -147,6 +148,7 @@ body {
 
 .dropdown-item {
   color: var(--text-color);
+  font-weight: 500;
 }
 
 .dropdown-item:hover,
@@ -159,6 +161,14 @@ body {
   background: var(--background-color);
   color: var(--text-color);
   border-color: var(--subtitle-color);
+  font-weight: 500;
+}
+
+button,
+input,
+select,
+textarea {
+  font-weight: 500;
 }
 
 .form-control:focus {
