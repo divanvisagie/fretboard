@@ -40,9 +40,12 @@ const App = () => (
         <footer>
             Divan Visagie • Copyright 2019-25 •{' '}
             <a href="mailto:me@divanv.com">me@divanv.com</a> •{' '}
-            <span><a href="/podcast">Podcast</a></span> •{' '}
             <span><a href="/cv">CV</a></span> •{' '}
-            <span><a href="https://github.com/divanvisagie">GitHub</a></span>
+            <span><a href="https://github.com/divanvisagie">GitHub</a></span> •{' '}
+            <span><a href="/pman">pman</a></span> •{' '}
+            <span><a href="/mdsql">mdsql</a></span> •{' '}
+            <span><a href="/fretboard">Fretboard</a></span> •{' '}
+            <span><a href="/weather">Weather</a></span>
         </footer>
     </div>
 )
